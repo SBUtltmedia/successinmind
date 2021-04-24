@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/sign_up.css'%}">
+	<!-- Sign Up Block -->
+	<div id='sign_up_block' class='container'>
+		<h1>Sign Up</h1><br>
+		<form method='post'>
+			{% csrf_token %}
+			<div class="row">
+				<div class="col-md-6">
+					<label for="firstname">First Name</label>
+					<input type="text" class="form-control" name="first_name" placeholder="First Name">
+				</div>
+				<div class="col-md-6">
+					<label for="lastname">Last Name</label>
+					<input type="text" class="form-control" name="last_name" placeholder="Last Name">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" name="email" placeholder="Email">
+					<small id="emailHelp" class="form-text text-muted">
+						We'll never share your email with anyone else.
+					</small>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="password">Password&emsp;</tv><span style="font-size: 90%; color: darkgray;">Password must be 8+ characters</span></label>
+					<input type="password" class="form-control" name="password" placeholder="Password">
+				</div>
+			</div>
+			<div class='row'>
+				<div class="form-group col-md-6">
+					{% if failed %}
+					<br>
+						{% for fail_msg in failed %}
+							<p style="color:red">{{ fail_msg }}</p>
+						{% endfor %}
+					{% endif %}
+				</div>
+				<div class="form-group col-md-6">
+					<label for="password_confirm">Confirm Password</label>
+					<input type="password" class="form-control" name="c_password" placeholder="Password">
+				</div>
+			</div>
+			<br>
+			<button type="submit" class="btn btn-primary">Sign up</button>
+		</form>
+	</div>
+	<br>
+	<p id='account'>Already have an account? <a href="{% url 'home:login' %}">Log In</a></p>
+{% endblock %}

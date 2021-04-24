@@ -1,0 +1,37 @@
+
+@media only screen and (min-width: 960px) {
+	.navbar .navbar-nav .nav-item .nav-link {
+		padding: 0 0.5em;
+	}
+	.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+		border-right: 2px solid #616161;
+	}
+
+	.navbar-brand{
+		margin-right: 25px;
+		margin-left: 5px;
+		font-size: 25;
+	}
+	
+}
+
+
+#log_in_block {
+	margin-top: 30px;
+	border: 1px solid blue;
+	border-radius: 15px;
+	padding: 40px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.form-check {
+	margin-top: 4px;
+}
+
+#account {
+	color: gray;
+	text-align: center;
+}

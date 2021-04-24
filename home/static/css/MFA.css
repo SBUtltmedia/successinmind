@@ -1,0 +1,85 @@
+@media only screen and (min-width: 960px) {
+	.navbar .navbar-nav .nav-item .nav-link {
+		padding: 0 0.5em;
+	}
+	.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+		border-right: 2px solid #616161;
+	}
+
+	.navbar-brand{
+		margin-right: 25px;
+		margin-left: 5px;
+		font-size: 25;
+	}
+	
+}
+
+
+#mfa_container {
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#mfa_container h1{
+	text-align: center;
+}
+#mfa_container h2{
+	text-align: center;
+}
+
+
+#mfa_container table {
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: bold;
+}
+
+#mfa_container tr {
+	display: inline-flex;
+}	
+
+#mfa_container td {
+	padding-left: 10px;
+	padding-right: 10px;
+}	
+
+.c_block {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.c_header h5 {
+	font-weight: bold;
+	padding-bottom: 2px;
+	border-bottom: 2px solid #4a5cff;
+}
+
+.c_header table {
+	font-weight: bold;
+}
+
+.c_question {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.c_question p {
+	padding-right: 8em;
+}
+
+.c_question * {
+	display: inline-block;
+}
+
+.c_option {
+	margin-right: 6px;
+	margin-left: 6px;
+	text-align: center;
+}
+
+#bottom_space {
+	margin: 20px;
+	border: 20px;
+	padding: 20px;
+}
