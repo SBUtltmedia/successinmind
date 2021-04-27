@@ -9,3 +9,5 @@ admin.site.register(models.Concentration)
 admin.site.register(models.Challenge)
 admin.site.register(models.Composure)
 admin.site.register(models.Commitment)
+
+admin.site.register(models.Journal)

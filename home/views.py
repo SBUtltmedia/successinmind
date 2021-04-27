@@ -1,12 +1,16 @@
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.shortcuts import render, redirect
 
 
 # Create your views here.
 from home import forms
 from home import models
+
+
+import decimal
 
 
 @login_required
@@ -78,7 +82,7 @@ class SignUpView(TemplateView):
 		return passed
 
 
-
+@method_decorator(login_required, name='dispatch')
 class MFAView(TemplateView):
 	template_name = 'MFA.html'
 
@@ -90,11 +94,30 @@ class MFAView(TemplateView):
 		mfa = models.MentalFitnessAssesment(user=request.user)
 		mfa.save()
 
-		self.gather_confidence(request_values, mfa)
-		self.gather_composure(request_values, mfa)
-		self.gather_challenge(request_values, mfa)
-		self.gather_concentration(request_values, mfa)
-		self.gather_commitment(request_values, mfa)
+		try:
+			results = {
+				'Confidence': self.gather_confidence(request_values, mfa),
+				'Concentration': self.gather_composure(request_values, mfa),
+				'Composure': self.gather_challenge(request_values, mfa),
+				'Challenge': self.gather_concentration(request_values, mfa),
+				'Commitment': self.gather_commitment(request_values, mfa),
+			}
+		except:
+			# TODO Handle this in time with JS
+			return render(request, self.template_name, context={'error': "Be sure to fill out every value!"})
+		results_data = list(results.values())
+		results_sum = sum(results_data)
+		
+		mfa.total = results_sum
+		mfa.save()
+
+		results_percent = decimal.Decimal((results_sum/50)*100)
+		results_percent = round(results_percent, 1)
+		return render(request, self.template_name, context={'results': results.items(),
+															'result_data': list(results.values()),
+															'result_sum': results_sum,
+															'result_percent': results_percent,
+															})
 
 	def gather_confidence(self, request_values, mfa):
 		c = models.Confidence(mfa_id=mfa)
@@ -104,6 +127,14 @@ class MFAView(TemplateView):
 		c.confidence_4 = request_values['confidence_4']
 		c.confidence_5 = request_values['confidence_5']
 		c.save()
+		
+		o_confidence = 0
+		for i in range(1, 6):
+			o_confidence += int(request_values[f'confidence_{i}'])
+		mfa.o_confidence = o_confidence
+		mfa.save()
+
+		return o_confidence
 
 	def gather_composure(self, request_values, mfa):
 		c = models.Composure(mfa_id=mfa)
@@ -114,6 +145,14 @@ class MFAView(TemplateView):
 		c.composure_5 = request_values['composure_5']
 		c.save()
 
+		o_composure = 0
+		for i in range(1, 6):
+			o_composure += int(request_values[f'composure_{i}'])
+		mfa.o_composure = o_composure
+		mfa.save()
+
+		return o_composure
+
 	def gather_challenge(self, request_values, mfa):
 		c = models.Challenge(mfa_id=mfa)
 		c.challenge_1 = request_values['challenge_1']
@@ -123,14 +162,31 @@ class MFAView(TemplateView):
 		c.challenge_5 = request_values['challenge_5']
 		c.save()
 
+		o_challenge = 0
+		for i in range(1, 6):
+			o_challenge += int(request_values[f'challenge_{i}'])
+		mfa.o_challenge = o_challenge
+		mfa.save()
+
+		return o_challenge
+
 	def gather_concentration(self, request_values, mfa):
 		c = models.Concentration(mfa_id=mfa)
+		o_concentration = 0
 		c.concentration_1 = request_values['concentration_1']
 		c.concentration_2 = request_values['concentration_2']
 		c.concentration_3 = request_values['concentration_3']
 		c.concentration_4 = request_values['concentration_4']
 		c.concentration_5 = request_values['concentration_5']
 		c.save()
+
+		o_concentration = 0
+		for i in range(1, 6):
+			o_concentration += int(request_values[f'concentration_{i}'])
+		mfa.o_concentration = o_concentration
+		mfa.save()
+
+		return o_concentration
 
 	def gather_commitment(self, request_values, mfa):
 		c = models.Commitment(mfa_id=mfa)
@@ -141,6 +197,21 @@ class MFAView(TemplateView):
 		c.commitment_5 = request_values['commitment_5']
 		c.save()
 
+		o_commitment = 0
+		for i in range(1, 6):
+			o_commitment += int(request_values[f'commitment_{i}'])
+		mfa.o_commitment = o_commitment
+		mfa.save()
 
-# class MFAReView(TemplateView):
-# 	template_name = 'index.html'
+		return o_commitment
+
+
+
+class ProfileView(TemplateView):
+	template_name = 'profile.html'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		user = self.request.user
+		context['MFAs'] = models.MentalFitnessAssesment.objects.filter(user=user)
+		return context

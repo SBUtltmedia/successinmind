@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body_block %}
-	<h1>Hello</h1>
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+	<div class='container'>
+		<div class='banner'>
+			<h2>SUCCESS IN MIND</h2>
+			<h5>The Student-Athlete's Pathway to Success</h5>
+			<br>
+			<p>Success is peace of mind that is a direct result of self satisfaction in knowing 
+				that you made the effort to become the best you’re capable of becoming.</p>
+			<p>John Wooden</p>
+		</div>
+		<div class='statement'>
+			<div>
+
+			</div>
+			<p>Success in Mind is a program that combines Digital Technology with Sport and Performance Psychology
+				to provide proven and strategies and resources for transforming the Student - Athlete experience in to a Pathway to success.</p>
+		</div>
+		<div class='statement'>
+			<p>This Pathway to Success utilizes an integrated App and Website design that begins with a Mental Fitness
+				Assessment to guide the Student - Athlete in the how to best engage the App based Goal Setting and Analysis component and the Library of educational resources on the website. Success in Mind Is designed to be used in a Self Directed manner or in conjunction with individual Sport Psychology Consultation.
+			</p>
+		</div>
+	</div>
 {% endblock %}

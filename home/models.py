@@ -7,37 +7,55 @@ from django.core import validators
 class MentalFitnessAssesment(models.Model):
 	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	date = models.DateTimeField(auto_now_add=True)
+	o_confidence = models.PositiveSmallIntegerField(default=0, null=True, validators=[
+								validators.MinLengthValidator(0),
+								validators.MaxLengthValidator(10),])
+	o_concentration = models.PositiveSmallIntegerField(default=0, null=True, validators=[
+								validators.MinLengthValidator(0),
+								validators.MaxLengthValidator(10),])
+	o_composure = models.PositiveSmallIntegerField(default=0, null=True, validators=[
+								validators.MinLengthValidator(0),
+								validators.MaxLengthValidator(10),])
+	o_challenge = models.PositiveSmallIntegerField(default=0, null=True, validators=[
+								validators.MinLengthValidator(0),
+								validators.MaxLengthValidator(10),])
+	o_commitment = models.PositiveSmallIntegerField(default=0, null=True, validators=[
+								validators.MinLengthValidator(0),
+								validators.MaxLengthValidator(10),])
+	total = models.PositiveSmallIntegerField(default=0, null=True, validators=[
+								validators.MinLengthValidator(0),
+								validators.MaxLengthValidator(50),])
 
 	def __str__(self) -> str:
-		return self.user.username + " - " + str(self.date)
+		return str(self.date)
 
 
 class Confidence(models.Model):
 	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
 	confidence_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	confidence_2 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	confidence_3 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	confidence_4 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	confidence_5 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 
 
@@ -45,28 +63,28 @@ class Composure(models.Model):
 	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
 	composure_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	composure_2 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	composure_3 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	composure_4 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	composure_5 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 
 
@@ -74,28 +92,28 @@ class Challenge(models.Model):
 	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
 	challenge_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	challenge_2 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	challenge_3 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	challenge_4 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	challenge_5 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 
 
@@ -103,28 +121,28 @@ class Concentration(models.Model):
 	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
 	concentration_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	concentration_2 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	concentration_3 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	concentration_4 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	concentration_5 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 
 
@@ -132,27 +150,32 @@ class Commitment(models.Model):
 	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
 	commitment_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	commitment_2 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	commitment_3 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	commitment_4 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 	commitment_5 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
-										validators.MinLengthValidator(1),
-										validators.MaxLengthValidator(3),
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(2),
 									])
 
+
+class Journal(models.Model):
+	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	date = models.DateTimeField()
+	text = models.TextField(max_length=2048)

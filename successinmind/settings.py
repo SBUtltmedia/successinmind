@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'home',
 ]
 
@@ -125,7 +126,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-LOGIN_URL = '/home/login'
+LOGIN_URL = '/login'
 
 
 # Default primary key field type

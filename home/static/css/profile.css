@@ -1,17 +1,12 @@
 
-#sign_up_block {
+#outer {
 	margin-top: 30px;
 	border: 1px solid blue;
 	border-radius: 15px;
 	padding: 40px;
 }
 
-h1 {
-	text-align: center;
-}
 
-
-#account {
-	color: gray;
+.table {
 	text-align: center;
 }
