@@ -94,29 +94,26 @@ class MFAView(TemplateView):
 		mfa = models.MentalFitnessAssesment(user=request.user)
 		mfa.save()
 
-		try:
-			results = {
-				'Confidence': self.gather_confidence(request_values, mfa),
-				'Concentration': self.gather_composure(request_values, mfa),
-				'Composure': self.gather_challenge(request_values, mfa),
-				'Challenge': self.gather_concentration(request_values, mfa),
-				'Commitment': self.gather_commitment(request_values, mfa),
-			}
-		except:
-			# TODO Handle this in time with JS
-			return render(request, self.template_name, context={'error': "Be sure to fill out every value!"})
+		# try:
+		results = {
+			'Confidence': self.gather_confidence(request_values, mfa),
+			'Concentration': self.gather_composure(request_values, mfa),
+			'Composure': self.gather_challenge(request_values, mfa),
+			'Challenge': self.gather_concentration(request_values, mfa),
+			'Commitment': self.gather_commitment(request_values, mfa),
+		}
+		# except:
+		# 	# Handled in time with JS, but just in case
+		# 	return render(request, self.template_name, context={'error': "Be sure to fill out every value!"})
 		results_data = list(results.values())
 		results_sum = sum(results_data)
 		
 		mfa.total = results_sum
 		mfa.save()
-
-		results_percent = decimal.Decimal((results_sum/50)*100)
-		results_percent = round(results_percent, 1)
 		return render(request, self.template_name, context={'results': results.items(),
 															'result_data': list(results.values()),
 															'result_sum': results_sum,
-															'result_percent': results_percent,
+															'result_percent': results_sum,
 															})
 
 	def gather_confidence(self, request_values, mfa):
@@ -126,11 +123,13 @@ class MFAView(TemplateView):
 		c.confidence_3 = request_values['confidence_3']
 		c.confidence_4 = request_values['confidence_4']
 		c.confidence_5 = request_values['confidence_5']
+		c.p_confidence = request_values['p_confidence']
 		c.save()
 		
 		o_confidence = 0
 		for i in range(1, 6):
 			o_confidence += int(request_values[f'confidence_{i}'])
+		o_confidence += int(request_values['p_confidence'])
 		mfa.o_confidence = o_confidence
 		mfa.save()
 
@@ -143,11 +142,13 @@ class MFAView(TemplateView):
 		c.composure_3 = request_values['composure_3']
 		c.composure_4 = request_values['composure_4']
 		c.composure_5 = request_values['composure_5']
+		c.p_composure = request_values['p_composure']
 		c.save()
 
 		o_composure = 0
 		for i in range(1, 6):
 			o_composure += int(request_values[f'composure_{i}'])
+		o_composure += int(request_values['p_composure'])
 		mfa.o_composure = o_composure
 		mfa.save()
 
@@ -160,11 +161,13 @@ class MFAView(TemplateView):
 		c.challenge_3 = request_values['challenge_3']
 		c.challenge_4 = request_values['challenge_4']
 		c.challenge_5 = request_values['challenge_5']
+		c.p_challenge = request_values['p_challenge']
 		c.save()
 
 		o_challenge = 0
 		for i in range(1, 6):
 			o_challenge += int(request_values[f'challenge_{i}'])
+		o_challenge += int(request_values['p_challenge'])
 		mfa.o_challenge = o_challenge
 		mfa.save()
 
@@ -178,11 +181,13 @@ class MFAView(TemplateView):
 		c.concentration_3 = request_values['concentration_3']
 		c.concentration_4 = request_values['concentration_4']
 		c.concentration_5 = request_values['concentration_5']
+		c.p_concentration = request_values['p_concentration']
 		c.save()
 
 		o_concentration = 0
 		for i in range(1, 6):
 			o_concentration += int(request_values[f'concentration_{i}'])
+		o_concentration += int(request_values['p_concentration'])
 		mfa.o_concentration = o_concentration
 		mfa.save()
 
@@ -195,11 +200,13 @@ class MFAView(TemplateView):
 		c.commitment_3 = request_values['commitment_3']
 		c.commitment_4 = request_values['commitment_4']
 		c.commitment_5 = request_values['commitment_5']
+		c.p_commitment = request_values['p_commitment']
 		c.save()
 
 		o_commitment = 0
 		for i in range(1, 6):
 			o_commitment += int(request_values[f'commitment_{i}'])
+		o_commitment += int(request_values['p_commitment'])
 		mfa.o_commitment = o_commitment
 		mfa.save()
 
@@ -215,3 +222,5 @@ class ProfileView(TemplateView):
 		user = self.request.user
 		context['MFAs'] = models.MentalFitnessAssesment.objects.filter(user=user)
 		return context
+
+

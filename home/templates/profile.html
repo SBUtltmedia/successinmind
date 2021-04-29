@@ -24,7 +24,7 @@
 							<th>Composure</th>
 							<th>Challenge</th>
 							<th>Commitment</th>
-							<th>Total</th>
+							<th>Overall Level</th>
 							<th>Export</th>
 						</tr>
 					</thead>
@@ -33,12 +33,12 @@
 							<tr>
 								<th>{{ forloop.counter }}</th>
 								<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
-								<td>{{MFA.o_confidence}}/10</td>
-								<td>{{MFA.o_concentration}}/10</td>
-								<td>{{MFA.o_composure}}/10</td>
-								<td>{{MFA.o_challenge}}/10</td>
-								<td>{{MFA.o_commitment}}/10</td>
-								<td>{{MFA.total}}/50</td>
+								<td>{{MFA.o_confidence}}/20</td>
+								<td>{{MFA.o_concentration}}/20</td>
+								<td>{{MFA.o_composure}}/20</td>
+								<td>{{MFA.o_challenge}}/20</td>
+								<td>{{MFA.o_commitment}}/20</td>
+								<td>{{MFA.total}}/100</td>
 								<td>
 									<a href="#">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -54,8 +54,41 @@
 			</div>
 			<!-- End Mental Fitness Table -->
 			<br>
+			<!-- Goal Success Plans Table -->
+			<h4>Weekly Goal/Success Plans</h4>
+			<div class='table-responsive'>
+				<table class='table table-striped'>
+					<thead class='table-dark'>
+						<tr>
+							<th>#</th>
+							<th>Date</th>
+							<th>Text</th>
+							<th>Export</th>
+						</tr>
+					</thead>
+					<!-- <tbody>
+						{% for journal in journals %}
+							<tr>
+								<th>{{ forloop.counter }}</th>
+								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
+								<td>Text</td>
+								<td>
+									<a href="#">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+										</svg>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody> -->
+				</table>
+			</div>
+			<!-- Goal Success Plans Table -->
+			<br>
 			<!-- Weekly Journals Table -->
-			<h4>Weekly Journals</h4>
+			<h4>Daily Success Journals</h4>
 			<div class='table-responsive'>
 				<table class='table table-striped'>
 					<thead class='table-dark'>
@@ -86,6 +119,73 @@
 				</table>
 			</div>
 			<!-- End Weekly Journals Table -->
+			<br>
+			<!-- Weekly Journals Table -->
+			<h4>Weekly Success Summaries</h4>
+			<div class='table-responsive'>
+				<table class='table table-striped'>
+					<thead class='table-dark'>
+						<tr>
+							<th>#</th>
+							<th>Date</th>
+							<th>Text</th>
+							<th>Export</th>
+						</tr>
+					</thead>
+					<!-- <tbody>
+						{% for journal in journals %}
+							<tr>
+								<th>{{ forloop.counter }}</th>
+								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
+								<td>Text</td>
+								<td>
+									<a href="#">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+										</svg>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody> -->
+				</table>
+			</div>
+			<!-- End Weekly Journals Table -->
+			<br>
+			<!-- Weekly Journals Table -->
+			<h4>Pathway To Success</h4>
+			<div class='table-responsive'>
+				<table class='table table-striped'>
+					<thead class='table-dark'>
+						<tr>
+							<th>#</th>
+							<th>Date</th>
+							<th>Text</th>
+							<th>Export</th>
+						</tr>
+					</thead>
+					<!-- <tbody>
+						{% for journal in journals %}
+							<tr>
+								<th>{{ forloop.counter }}</th>
+								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
+								<td>Text</td>
+								<td>
+									<a href="#">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+										</svg>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody> -->
+				</table>
+			</div>
+			<!-- End Weekly Journals Table -->
+			<br>
 		</div>
 	</div>
 {% endblock %}

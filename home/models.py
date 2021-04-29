@@ -57,6 +57,11 @@ class Confidence(models.Model):
 										validators.MinLengthValidator(0),
 										validators.MaxLengthValidator(2),
 									])
+	p_confidence = models.PositiveSmallIntegerField(null=False, 
+									validators=[
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(10),
+									])
 
 
 class Composure(models.Model):
@@ -85,6 +90,11 @@ class Composure(models.Model):
 									validators=[
 										validators.MinLengthValidator(0),
 										validators.MaxLengthValidator(2),
+									])
+	p_composure = models.PositiveSmallIntegerField(null=False, 
+									validators=[
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(10),
 									])
 
 
@@ -115,6 +125,11 @@ class Challenge(models.Model):
 										validators.MinLengthValidator(0),
 										validators.MaxLengthValidator(2),
 									])
+	p_challenge = models.PositiveSmallIntegerField(null=False, 
+									validators=[
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(10),
+									])
 
 
 class Concentration(models.Model):
@@ -144,6 +159,11 @@ class Concentration(models.Model):
 										validators.MinLengthValidator(0),
 										validators.MaxLengthValidator(2),
 									])
+	p_concentration = models.PositiveSmallIntegerField(null=False, 
+									validators=[
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(10),
+									])
 
 
 class Commitment(models.Model):
@@ -172,6 +192,11 @@ class Commitment(models.Model):
 									validators=[
 										validators.MinLengthValidator(0),
 										validators.MaxLengthValidator(2),
+									])
+	p_commitment = models.PositiveSmallIntegerField(null=False, 
+									validators=[
+										validators.MinLengthValidator(0),
+										validators.MaxLengthValidator(10),
 									])
 
 

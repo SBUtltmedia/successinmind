@@ -22,7 +22,7 @@
 			<form method='post'>
 				{% csrf_token %}
 				<br>
-				<div class='form'>
+				<div id='mfa_form' class='form'>
 					<!-- Confidence -->
 					<div class='inner_form'>
 						<div class='form-heading'>
@@ -44,8 +44,8 @@
 										</tr>
 										<tr>
 											<td><label for='confidence_1'>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='confidence_1'>1</label></td>
+											<td><label for='confidence_1'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -62,9 +62,9 @@
 											<td><input name='confidence_2' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='confidence_2'>0</label></td>
+											<td><label for='confidence_2'>1</label></td>
+											<td><label for='confidence_2'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -81,9 +81,9 @@
 											<td><input name='confidence_3' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='confidence_3'>0</label></td>
+											<td><label for='confidence_3'>1</label></td>
+											<td><label for='confidence_3'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -100,9 +100,9 @@
 											<td><input name='confidence_4' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='confidence_4'>0</label></td>
+											<td><label for='confidence_4'>1</label></td>
+											<td><label for='confidence_4'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -119,15 +119,16 @@
 											<td><input name='confidence_5' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='confidence_4'>0</label></td>
+											<td><label for='confidence_4'>1</label></td>
+											<td><label for='confidence_4'>2</label></td>
 										</tr>
 									</table>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- End Confidence -->
 					<!-- Concentration -->
 					<div class='inner_form'>
 						<div class='form-heading'>
@@ -148,9 +149,9 @@
 											<td><input name='concentration_1' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='concentration_1'>0</label></td>
+											<td><label for='concentration_1'>1</label></td>
+											<td><label for='concentration_1'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -167,9 +168,9 @@
 											<td><input name='concentration_2' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='concentration_2'>0</label></td>
+											<td><label for='concentration_2'>1</label></td>
+											<td><label for='concentration_2'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -186,9 +187,9 @@
 											<td><input name='concentration_3' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='concentration_3'>0</label></td>
+											<td><label for='concentration_3'>1</label></td>
+											<td><label for='concentration_3'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -205,9 +206,9 @@
 											<td><input name='concentration_4' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='concentration_4'>0</label></td>
+											<td><label for='concentration_4'>1</label></td>
+											<td><label for='concentration_4'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -224,15 +225,16 @@
 											<td><input name='concentration_5' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='concentration_5'>0</label></td>
+											<td><label for='concentration_5'>1</label></td>
+											<td><label for='concentration_5'>2</label></td>
 										</tr>
 									</table>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- End Concentration -->
 					<!-- Composure -->
 					<div class='inner_form'>
 						<div class='form-heading'>
@@ -253,9 +255,9 @@
 											<td><input name='composure_1' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='composure_1'>0</label></td>
+											<td><label for='composure_1'>1</label></td>
+											<td><label for='composure_1'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -272,9 +274,9 @@
 											<td><input name='composure_2' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='composure_2'>0</label></td>
+											<td><label for='composure_2'>1</label></td>
+											<td><label for='composure_2'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -291,9 +293,9 @@
 											<td><input name='composure_3' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='composure_3'>0</label></td>
+											<td><label for='composure_3'>1</label></td>
+											<td><label for='composure_3'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -310,9 +312,9 @@
 											<td><input name='composure_4' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='composure_4'>0</label></td>
+											<td><label for='composure_4'>1</label></td>
+											<td><label for='composure_4'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -329,15 +331,16 @@
 											<td><input name='composure_5' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='composure_5'>0</label></td>
+											<td><label for='composure_5'>1</label></td>
+											<td><label for='composure_5'>2</label></td>
 										</tr>
 									</table>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- End Composure -->
 					<!-- Challenge -->
 					<div class='inner_form'>
 						<div class='form-heading'>
@@ -358,9 +361,9 @@
 											<td><input name='challenge_1' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='challenge_1'>0</label></td>
+											<td><label for='challenge_1'>1</label></td>
+											<td><label for='challenge_1'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -377,9 +380,9 @@
 											<td><input name='challenge_2' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='challenge_2'>0</label></td>
+											<td><label for='challenge_2'>1</label></td>
+											<td><label for='challenge_2'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -396,9 +399,9 @@
 											<td><input name='challenge_3' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='challenge_3'>0</label></td>
+											<td><label for='challenge_3'>1</label></td>
+											<td><label for='challenge_3'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -415,9 +418,9 @@
 											<td><input name='challenge_4' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='challenge_4'>0</label></td>
+											<td><label for='challenge_4'>1</label></td>
+											<td><label for='challenge_4'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -434,15 +437,16 @@
 											<td><input name='challenge_5' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='challenge_5'>0</label></td>
+											<td><label for='challenge_5'>1</label></td>
+											<td><label for='challenge_5'>2</label></td>
 										</tr>
 									</table>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- End Challenge -->
 					<!-- Commitment -->
 					<div class='inner_form'>
 						<div class='form-heading'>
@@ -463,9 +467,9 @@
 											<td><input name='commitment_1' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='commitment_1'>0</label></td>
+											<td><label for='commitment_1'>1</label></td>
+											<td><label for='commitment_1'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -482,9 +486,9 @@
 											<td><input name='commitment_2' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='commitment_2'>0</label></td>
+											<td><label for='commitment_2'>1</label></td>
+											<td><label for='commitment_2'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -501,9 +505,9 @@
 											<td><input name='commitment_3' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='commitment_3'>0</label></td>
+											<td><label for='commitment_3'>1</label></td>
+											<td><label for='commitment_3'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -520,9 +524,9 @@
 											<td><input name='commitment_4' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='commitment_4'>0</label></td>
+											<td><label for='commitment_4'>1</label></td>
+											<td><label for='commitment_4'>2</label></td>
 										</tr>
 									</table>
 								</div>
@@ -539,20 +543,141 @@
 											<td><input name='commitment_5' class="form-check-input" type="radio" value='2'></td>
 										</tr>
 										<tr>
-											<td><label>0</label></td>
-											<td><label>1</label></td>
-											<td><label>2</label></td>
+											<td><label for='commitment_5'>0</label></td>
+											<td><label for='commitment_5'>1</label></td>
+											<td><label for='commitment_5'>2</label></td>
 										</tr>
 									</table>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- End Commitment -->
+					<!-- Perception -->
+					<div class='inner_form'>
+						<div class='form-heading'>
+							<h3>Overall Rating</h3>
+							<h5>Rate your perceived level of MENTAL FITNESS over the past week on each of Dr. B’S 5 C’s with ZERO being the lowest and TEN being the highest:</h5>
+						</div>
+						<br>
+						<div id='perception' class='form-block'>
+							<div class='form-question row align-items-center'>
+								<div class='form-prompt col-4'>
+									<label for="p_confidence"><h4>Confidence</h4></label>
+								</div>
+								<div class="form-inputs col-2">
+									<select class="form-control" name="p_confidence">
+										<option style="display: none;"></option>
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+									</select>
+								</div>
+							</div>
+							<div class='form-question row align-items-center'>
+								<div class='form-prompt col-4'>
+									<label for="p_concentration"><h4>Concentration</h4></label>
+								</div>
+								<div class="form-inputs col-2">
+									<select class="form-control" name="p_concentration">
+										<option style="display: none;"></option>
+										<option>0</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+									</select>
+								</div>
+							</div>
+							<div class='form-question row align-items-center'>
+								<div class='form-prompt col-4'>
+									<label for="p_composure"><h4>Composure</h4></label>
+								</div>
+								<div class="form-inputs col-2">
+									<select class="form-control" name="p_composure">
+										<option style="display: none;"></option>
+										<option>0</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+									</select>
+								</div>
+							</div>
+							<div class='form-question row align-items-center'>
+								<div class='form-prompt col-4'>
+									<label for="p_challenge"><h4>Challenge Response</h4></label>
+								</div>
+								<div class="form-inputs col-2">
+									<select class="form-control" name="p_challenge">
+										<option style="display: none;"></option>
+										<option>0</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+									</select>
+								</div>
+							</div>
+							<div class='form-question row align-items-center'>
+								<div class='form-prompt col-4'>
+									<label for="p_commitment"><h4>Commitment</h4></label>
+								</div>
+								<div class="form-inputs col-2">
+									<select class="form-control" name="p_commitment">
+										<option style="display: none;"></option>
+										<option>0</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
+										<option>7</option>
+										<option>8</option>
+										<option>9</option>
+										<option>10</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Perception -->
 				</div>
 				<br>
+				<div id='error_block'><p></p></div>
 				<div class='navigation'>
-					<div id='back' class='arrow btn btn-primary'><p>Back</p></div>
+					<svg id='back' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" arrow bi bi-arrow-left-square" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+					</svg>
 					<div class='indicator_dots'>
+						<div class="dot"></div>
 						<div class="dot"></div>
 						<div class="dot"></div>
 						<div class="dot"></div>
@@ -560,7 +685,9 @@
 						<div class="dot"></div>
 					</div>
 					<input id='submit' type="submit" class='arrow btn btn-primary' value="Submit"></input>
-					<div id='forward' class='arrow btn btn-primary'><p>Forward</p></div>
+					<svg id='forward' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="arrow bi bi-arrow-right-square" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+					</svg>
 				</div>
 			</form>
 			{% if error %}
@@ -568,38 +695,39 @@
 			{% endif %}
 			<script src="{% static 'js/mfa.js' %}"></script>
 		{% else %}
-			<div class='c_header'>
-				<h3 style="text-align: center;">Results</h3>
-			</div>
-			<div id='results'>
-				{% for c, result in results %}
-					<div class="result">
-						<div class='result_c'>
-							<h3>{{c}}:</h3>
+			<div class='form'>
+				<div class='c_header'>
+					<h3 style="text-align: center;">Results</h3>
+				</div>
+				<div id='results'>
+					{% for c, result in results %}
+						<div class="result">
+							<div class='result_c'>
+								<h3>{{c}}:</h3>
+							</div>
+							<div class='result_dots'>
+								{% for i in '0123456789'|make_list %}
+									<p class='result_dot'></p>
+								{% endfor %}
+								<p>&emsp;{{result}}/20</p>
+							</div>
 						</div>
-						<div class='result_dots'>
-							{% for i in '0123456789'|make_list %}
-								<p class='result_dot'></p>
-							{% endfor %}
-							<p>&emsp;{{result}}/10</p>
-						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
+				<div id='total'>
+					<h3>Overall Mental Fitness Score:&emsp;&emsp;&emsp;&emsp;{{result_sum}}/100&emsp;&emsp;&emsp;&emsp;{{result_percent}}%</h3>
+					{% if result_percent > 75 %}
+						<h4 style='color: SpringGreen'>Outstanding Mental Fitness</h4>
+					{% elif result_percent > 60 %}
+						<h4 style='color: yellow'>Could benefit from more consistent application of mental skills</h4>
+					{% else %}
+						<h4 style='color: red'>Could benefit from mental training</h4>
+					{% endif %}
+				</div>
+				<div id='try_again'>
+					<p></p><a style="color: gray;" href="{% url 'home:MFA' %}">Take it again?</a></p>
+				</div>
 			</div>
-			<div id='total'>
-				<h3>Total:&emsp;&emsp;&emsp;&emsp;{{result_sum}}/50&emsp;&emsp;&emsp;&emsp;{{result_percent}}%</h3>
-				{% if result_percent > 75 %}
-					<h4 style='color: SpringGreen'>Outstanding Mental Fitness</h4>
-				{% elif result_percent > 50 %}
-					<h4 style='color: yellow'>Could benefit from more consistent application of mental skills</h4>
-				{% else %}
-					<h4 style='color: red'>Could benefit from mental training</h4>
-				{% endif %}
-			</div>
-			<div id='try_again'>
-				<p></p><a style="color: gray;" href="{% url 'home:MFA' %}">Take it again?</a></p>
-			</div>
-			<!-- Color Dots -->
 			{{ result_data|json_script:"result_data" }}
 			<script src="{% static 'js/mfa_results.js' %}"></script>
 		{% endif %}
