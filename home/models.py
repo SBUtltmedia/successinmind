@@ -1,10 +1,16 @@
+from django.contrib.auth.models import User
 from django.db import models
-from django.utils import timezone
 from django.core import validators
 
 # Create your models here.
 
-class MentalFitnessAssesment(models.Model):
+
+class Profile(models.Model):
+	users = models.OneToOneField(User, on_delete=models.CASCADE)
+	sports = models.CharField(max_length=256)
+
+
+class MentalFitnessAssessment(models.Model):
 	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	date = models.DateTimeField(auto_now_add=True)
 	o_confidence = models.PositiveSmallIntegerField(default=0, null=True, validators=[
@@ -27,11 +33,12 @@ class MentalFitnessAssesment(models.Model):
 								validators.MaxLengthValidator(50),])
 
 	def __str__(self) -> str:
-		return str(self.date)
+		info = f'{self.user.email} - {str(self.date)}'
+		return info
 
 
 class Confidence(models.Model):
-	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
+	mfa_id = models.ForeignKey('home.MentalFitnessAssessment', on_delete=models.CASCADE)
 	confidence_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
 										validators.MinLengthValidator(0),
@@ -65,7 +72,7 @@ class Confidence(models.Model):
 
 
 class Composure(models.Model):
-	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
+	mfa_id = models.ForeignKey('home.MentalFitnessAssessment', on_delete=models.CASCADE)
 	composure_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
 										validators.MinLengthValidator(0),
@@ -99,7 +106,7 @@ class Composure(models.Model):
 
 
 class Challenge(models.Model):
-	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
+	mfa_id = models.ForeignKey('home.MentalFitnessAssessment', on_delete=models.CASCADE)
 	challenge_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
 										validators.MinLengthValidator(0),
@@ -133,7 +140,7 @@ class Challenge(models.Model):
 
 
 class Concentration(models.Model):
-	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
+	mfa_id = models.ForeignKey('home.MentalFitnessAssessment', on_delete=models.CASCADE)
 	concentration_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
 										validators.MinLengthValidator(0),
@@ -167,7 +174,7 @@ class Concentration(models.Model):
 
 
 class Commitment(models.Model):
-	mfa_id = models.ForeignKey('home.MentalFitnessAssesment', on_delete=models.CASCADE)
+	mfa_id = models.ForeignKey('home.MentalFitnessAssessment', on_delete=models.CASCADE)
 	commitment_1 = models.PositiveSmallIntegerField(null=False, 
 									validators=[
 										validators.MinLengthValidator(0),

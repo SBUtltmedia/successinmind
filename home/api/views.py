@@ -20,16 +20,41 @@ class ApiMainView(APIView):
 			})
 
 
+
+class UserApiView(APIView):
+
+	def post(self, request, *args, **kwargs):
+		data = {
+			'username': request.data.get('email'),
+			'email': request.data.get('email'),
+			'first_name': request.data.get('first_name'),
+			'last_name': request.data.get('last_name'),
+			'password': request.data.get('password'),
+		}
+		sports = request.data.get('sports')
+		serializer = serializers.JournalSerializer(data=data)
+		if serializer.is_valid():
+			user = serializer.save()
+			
+			profile = models.Profile(user=user)
+			profile.sports = sports
+			profile.save()
+
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
+		else:
+			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class MFAApiView(APIView):
 	permission_classes = [permissions.IsAuthenticated]
 
 	def get(self, request, *args, **kwargs):
 		date = request.data.get('date')
 		if date:
-			mfa = models.MentalFitnessAssesment.objects.filter(user=request.user, date=date)
+			mfa = models.MentalFitnessAssessment.objects.filter(user=request.user, date=date)
 		else:
-			mfa = models.MentalFitnessAssesment.objects.filter(user=request.user)
-		serializer = serializers.MentalFitnessAssesmentSerializer(mfa, many=True)
+			mfa = models.MentalFitnessAssessment.objects.filter(user=request.user)
+		serializer = serializers.MentalFitnessAssessmentSerializer(mfa, many=True)
 
 		return Response(serializer.data, status=status.HTTP_200_OK)
 

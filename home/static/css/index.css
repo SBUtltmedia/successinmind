@@ -1,8 +1,44 @@
 
-.container {
-	padding: 30px;
-	margin-top: 25px;
+#enclosure {
+	position: relative;
+}
+
+
+#outer_container {
+	position: absolute;
+}
+
+
+#inner_container {
+	position: relative;
+	left: 25%;
 	text-align: center;
-	border: 1px blue solid;
+}
+
+#inner_inner_container {
+	padding: 30px;
+	margin-top: 100px;
+	border: 2px #990000 solid;
 	border-radius: 25px;
 }
+
+
+#first_statement {
+	margin-bottom: 20px;
+}
+
+.speaker {
+	height: 50px;
+	width: 50px;
+}
+
+
+#dr_b {
+	position: absolute;
+	margin-top: 20px;
+	pointer-events: none;
+}
+
+#sbu_splash {
+	margin-top: 20px;
+} 

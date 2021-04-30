@@ -4,7 +4,7 @@
 		padding: 0 0.5em;
 	}
 	.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
-		border-right: 2px solid #616161;
+		border-right: 2px solid darkgray;
 	}
 
 	.navbar-brand{
@@ -13,4 +13,15 @@
 		font-size: 25;
 	}
 	
+}
+
+
+nav {
+	background-color: #990000;
+	border-color: #990000;
+	color: #990000;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
 }

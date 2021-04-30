@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='MentalFitnessAssesment',
+            name='MentalFitnessAssessment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateTimeField(auto_now_add=True)),
@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
                 ('confidence_3', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('confidence_4', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('confidence_5', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
-                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.mentalfitnessassesment')),
+                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.MentalFitnessAssessment')),
             ],
         ),
         migrations.CreateModel(
@@ -59,7 +59,7 @@ class Migration(migrations.Migration):
                 ('concentration_3', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('concentration_4', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('concentration_5', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
-                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.mentalfitnessassesment')),
+                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.MentalFitnessAssessment')),
             ],
         ),
         migrations.CreateModel(
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
                 ('composure_3', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('composure_4', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('composure_5', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
-                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.mentalfitnessassesment')),
+                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.MentalFitnessAssessment')),
             ],
         ),
         migrations.CreateModel(
@@ -83,7 +83,7 @@ class Migration(migrations.Migration):
                 ('commitment_3', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('commitment_4', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('commitment_5', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
-                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.mentalfitnessassesment')),
+                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.MentalFitnessAssessment')),
             ],
         ),
         migrations.CreateModel(
@@ -95,7 +95,7 @@ class Migration(migrations.Migration):
                 ('challenge_3', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('challenge_4', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
                 ('challenge_5', models.PositiveSmallIntegerField(validators=[django.core.validators.MinLengthValidator(0), django.core.validators.MaxLengthValidator(2)])),
-                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.mentalfitnessassesment')),
+                ('mfa_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.MentalFitnessAssessment')),
             ],
         ),
     ]

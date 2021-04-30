@@ -15,13 +15,13 @@
 
 .form {
 	padding: 20px;
-	border: 1px blue solid;
+	border: 2px #990000 solid;
 	border-radius: 25px;
 }
 
 .form-heading {
 	padding-bottom: 10px;
-	border-bottom: 1px blue solid;
+	border-bottom: 1px #990000 solid;
 	text-align: center;
 }
 
@@ -81,7 +81,7 @@
 
 #back, #forward {
 	cursor: pointer;
-	color: blue;
+	color: #990000;
 }
 
 

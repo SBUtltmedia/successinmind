@@ -1,10 +1,16 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 from home import models
 
 
-class MentalFitnessAssesmentSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = models.MentalFitnessAssesment
+		model = User
+		fields = ('username', 'email', 'first_name', 'last_name', 'password')
+
+class MentalFitnessAssessmentSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.MentalFitnessAssessment
 		fields = ('date', 'o_confidence', 'o_concentration', 'o_composure', 'o_challenge',
 				'o_commitment', 'total')
 

@@ -19,7 +19,7 @@ change_inner_form()
 function change_dots () {
 	for (i = 0; i < dots.length; i++) {
 		if (i <= inner_index) {
-			$(dots[i]).animate({backgroundColor: 'blue'}, 'fast');
+			$(dots[i]).animate({backgroundColor: '#990000'}, 'fast');
 		} else {
 			$(dots[i]).animate({backgroundColor: 'white'}, 'fast');
 		}

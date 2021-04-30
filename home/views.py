@@ -91,20 +91,20 @@ class MFAView(TemplateView):
 		for c in request_values.values():
 			if not c:
 				return
-		mfa = models.MentalFitnessAssesment(user=request.user)
+		mfa = models.MentalFitnessAssessment(user=request.user)
 		mfa.save()
 
-		# try:
-		results = {
-			'Confidence': self.gather_confidence(request_values, mfa),
-			'Concentration': self.gather_composure(request_values, mfa),
-			'Composure': self.gather_challenge(request_values, mfa),
-			'Challenge': self.gather_concentration(request_values, mfa),
-			'Commitment': self.gather_commitment(request_values, mfa),
-		}
-		# except:
-		# 	# Handled in time with JS, but just in case
-		# 	return render(request, self.template_name, context={'error': "Be sure to fill out every value!"})
+		try:
+			results = {
+				'Confidence': self.gather_confidence(request_values, mfa),
+				'Concentration': self.gather_composure(request_values, mfa),
+				'Composure': self.gather_challenge(request_values, mfa),
+				'Challenge': self.gather_concentration(request_values, mfa),
+				'Commitment': self.gather_commitment(request_values, mfa),
+			}
+		except:
+			# Handled in time with JS, but just in case
+			return render(request, self.template_name, context={'error': "Be sure to fill out every value!"})
 		results_data = list(results.values())
 		results_sum = sum(results_data)
 		
@@ -220,7 +220,18 @@ class ProfileView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		user = self.request.user
-		context['MFAs'] = models.MentalFitnessAssesment.objects.filter(user=user)
+		context['MFAs'] = models.MentalFitnessAssessment.objects.filter(user=user)
 		return context
 
 
+
+class B_60View(TemplateView):
+	template_name = 'b_60.html'
+
+
+class TeamsView(TemplateView):
+	template_name = 'teams.html'
+
+
+class AboutView(TemplateView):
+	template_name = 'about.html'

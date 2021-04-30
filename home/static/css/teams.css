@@ -1,0 +1,33 @@
+
+.container {
+	margin-top: 50px;
+}
+
+
+.panel {
+	position: relative;
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 50px;
+	padding: 25px;
+	padding-bottom: 60px;
+	border: 3px black solid;
+	background-color: #990000;
+	color: white;
+}
+
+.panel h5 {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.panel ul {
+	text-align: left;
+}
+
+.panel div {
+	margin-left: 32%;
+	position: absolute;
+	bottom: 20px;
+}
