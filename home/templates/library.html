@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/library.css' %}">
+<div id='enclosure' class='container'>
+	<h1>Success In Mind Library</h1>
+	<p>The Resource Library contains narrated tutorials, articles, worksheets, audio downloads, and videos to strengthen
+		your Mental
+		Fitness and assist you in the pursuit of EXCELLENCE on the Pathway to Success.
+	</p>
+	<p>It can be used in two ways. First, by browsing its contents in search of a specific educational tool you can use
+		to practice a Mental Training routine.
+		Its second and highly effective utility is as a companion to the <a href="{% url 'home:MFA' %}">Mental Fitness
+			Assessment</a> and the
+		accompanying <a href="{% url 'home:mind_gym' %}">Mind Gym</a> mental workouts.
+	</p>
+	<br><br>
+	<div class='row'>
+		<div class='col'>
+			<h5>Links - (Ordered By Media Format)</h5>
+			<ul id='media'>
+				<li><a href="{% url 'home:library_media_tutorials' %}">Narrated Tutorials</a></li>
+				<li><a href="{% url 'home:library_media_articles' %}">Articles</a></li>
+				<li><a href="{% url 'home:library_media_worksheets' %}">Worksheets</a></li>
+				<li><a href="{% url 'home:library_media_audio' %}">Audio Downloads</a></li>
+				<li><a href="{% url 'home:library_media_videos' %}">Videos</a></li>
+			</ul>
+		</div>
+		<div class='col'>
+			<h5>Links - (Ordered By Topic)</h5>
+			<ul id='topic'>
+				<li><a href="{% url 'home:library_topic_overall_mental' %}">Overall Mental Fitness</a></li>
+				<li><a href="{% url 'home:library_topic_ideal_performance' %}">Ideal Performance State and Flow</a></li>
+				<li><a href="{% url 'home:library_topic_mindfullness_meditation' %}">Mindfulness and Meditation</a></li>
+				<li><a href="{% url 'home:library_topic_sleep_rest' %}">Sleep and Rest</a></li>
+				<li><a href="{% url 'home:library_topic_healing_recovery' %}">Healing and Recovery</a></li>
+				<li><a href="{% url 'home:library_topic_managing_thoughts_feelings' %}">Managing Thoughts and Feelings</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -6,8 +6,9 @@ from django.core import validators
 
 
 class Profile(models.Model):
-	users = models.OneToOneField(User, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	sports = models.CharField(max_length=256)
+	gender = models.CharField(max_length=64)
 
 
 class MentalFitnessAssessment(models.Model):

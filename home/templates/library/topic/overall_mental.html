@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/library/topic/overall_mental.css' %}">
+	<div id='enclosure' class='container'>
+		<h1>Success In Mind Library</h1>
+		<h2>Overall Mental Fitness</h2>
+		<h3>Narrated Tutorials</h3>
+		<ul>
+			<li><a href="{% static 'library/tutorials/' %}" target="_blank"></a></li>
+		</ul>
+		<br>
+		<h3>Articles</h3>
+		<ul>
+			<li><a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.doc' %}" target="_blank">Perform Like A Star</a></li>
+			<li><a href="{% static 'library/articles/Take-Your-Mental-Game-on-the-Road.doc' %}" target="_blank">Take your Mental Game on the road</a></li>
+			<li><a href="{% static 'library/articles/Four_Crazy_Rules.pdf' %}" target="_blank">Four Crazy Rules for Mental Toughness</a></li>
+			<li><a href="{% static 'library/articles/CHALLENGE_RESPONSE.pdf' %}" target="_blank">Challenge Response</a></li>
+		</ul>
+		<br>
+		<h3>Worksheets</h3>
+		<ul>
+			<li><a href="{% static 'library/worksheets/Perform-Like-A-Star-Workbook.pdf' %}" target="_blank">Perform Like A Star Workbook</a></li>
+			<li><a href="{% static 'library/worksheets/Weekly-Goal-Plan-SB.docx' %}" target="_blank">Weekly Goal / Success Plan</a></li>
+			<li><a href="#" target="_blank">Daily Success Journal</a></li>
+			<li><a href="{% static 'library/worksheets/MY-WELL.docx' %}" target="_blank">My Well</a></li>
+			<li><a href="{% static 'library/worksheets/Goal_Setting.pdf' %}" target="_blank">Goal Setting Worksheet</a></li>
+		</ul>
+		<br>
+		<h3>Videos</h3>
+		<ul>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a></li>
+		</ul>
+		<br>
+	</div>
+{% endblock %}

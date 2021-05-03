@@ -3,6 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from home import models
 
+admin.site.register(models.Profile)
 admin.site.register(models.MentalFitnessAssessment)
 admin.site.register(models.Confidence)
 admin.site.register(models.Concentration)

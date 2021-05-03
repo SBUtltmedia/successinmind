@@ -40,6 +40,12 @@
 }
 
 
+.form-check-input:checked {
+    background-color: #990000;
+    border-color: #990000;
+}
+
+
 
 .form-inputs {
 	margin-left: 130px;
@@ -71,6 +77,16 @@
 	display: inline-block;
 }
 
+.btn-primary {
+	background-color: #990000;
+    border-color: #990000;
+}
+
+.btn-primary:hover {
+	background-color: red;
+    border-color: red;
+}
+
 .arrow {
 	width: 80px;
 	height: 40px;
@@ -84,6 +100,11 @@
 	color: #990000;
 }
 
+
+#back:hover, #forward:hover {
+	cursor: pointer;
+	color: red;
+}
 
 table {
 	text-align: center;

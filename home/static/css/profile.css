@@ -10,3 +10,7 @@
 .table {
 	text-align: center;
 }
+
+.table-dark {
+    --bs-table-bg: #990000;
+}

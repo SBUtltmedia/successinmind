@@ -11,6 +11,7 @@
 	<script src="{% static 'js/jquery.color-2.1.0.js' %}"></script>
 	<!-- Base CSS -->
 	<link rel="stylesheet" href="{% static 'css/base.css'%}">
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/brand.png' %}"/>
 	<title>Success In Mind</title>
 </head>
 
@@ -18,7 +19,7 @@
 	<!-- Nav Bar Content -->
 	<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="{% url 'home:index' %}">Dr. B</a>
+			<a class="navbar-brand" href="{% url 'home:index' %}"><img id='brand' src="{% static 'images/brand.png' %}" alt="Dr. B"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -33,16 +34,16 @@
 						<a class="nav-link" href="{% url 'home:B_60' %}">Dr. B in 60 Video Series</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="#">Resource Library</a>
+						<a class="nav-link" aria-current="page" href="{% url 'home:library' %}">Resource Library</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="#">Mind Gym</a>
+						<a class="nav-link" aria-current="page" href="{% url 'home:mind_gym' %}">Mind Gym</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="#">Consultation</a>
+						<a class="nav-link" aria-current="page" href="{% url 'home:consultation' %}">Consultation</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'home:teams' %}">Workshop with Teams</a>
+						<a class="nav-link" href="{% url 'home:teams' %}">Workshops with Teams</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" aria-current="page" href="{% url 'home:about' %}">About Dr. B</a>

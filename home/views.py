@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -49,24 +50,38 @@ class SignUpView(TemplateView):
 		request_values = request.POST.copy()
 		request_values['username'] = request_values['email']
 		form = self.form_class(data=request_values)
+		# Custom validation (Form wasn't too helpful here)
 		if self.validate_post(request_values) and form.is_valid():
 			user = form.save(commit=False)
 			user.set_password(user.password)
 			user.save()
+
+			profile = models.Profile(user=user)
+			profile.sports = request_values['sports']
+			profile.gender = request_values['gender']
+
+			profile.save()
+
 			login(request, user)
 			return redirect('home:index')
 		return render(request, self.template_name, context={'failed': self.fail_msg})
 
 	def validate_post(self, request_values):
+		# Custom Validation
+
 		passed = True
+		if len(request_values['email']) > 1:
+			if User.objects.filter(email=request_values['email']).exists():
+				self.fail_msg.append('User already exists!')
+			passed = False
 		if len(request_values['first_name']) < 1:
-			self.fail_msg.append('Please input a First Name!')
+			self.fail_msg.append('Please input a first name!')
 			passed = False
 		if len(request_values['last_name']) < 1:
-			self.fail_msg.append('Please input a Last Name!')
+			self.fail_msg.append('Please input a last name!')
 			passed = False
 		if len(request_values['last_name']) < 1:
-			self.fail_msg.append('Please input an Email Address!')
+			self.fail_msg.append('Please input an email address!')
 			passed = False
 		if len(request_values['password']) > 0:
 			if request_values['password'] != request_values['c_password']:
@@ -77,7 +92,13 @@ class SignUpView(TemplateView):
 					self.fail_msg.append('Password must be 8+ characters!')
 					passed = False
 		else:
-			self.fail_msg.append('Please input a Password!')
+			self.fail_msg.append('Please input a password!')
+			passed = False
+		if len(request_values['gender']) < 0:
+			self.fail_msg.append('Please input a gender!')
+			passed = False
+		if len(request_values['sports']) < 0:
+			self.fail_msg.append('Please input a sport!')
 			passed = False
 		return passed
 
@@ -214,6 +235,7 @@ class MFAView(TemplateView):
 
 
 
+@method_decorator(login_required, name='dispatch')
 class ProfileView(TemplateView):
 	template_name = 'profile.html'
 
@@ -221,6 +243,7 @@ class ProfileView(TemplateView):
 		context = super().get_context_data(**kwargs)
 		user = self.request.user
 		context['MFAs'] = models.MentalFitnessAssessment.objects.filter(user=user)
+		context['profile'] = user.profile
 		return context
 
 
@@ -235,3 +258,73 @@ class TeamsView(TemplateView):
 
 class AboutView(TemplateView):
 	template_name = 'about.html'
+
+
+class ConsultationView(TemplateView):
+	template_name = 'consultation.html'
+
+
+
+class MindGymView(TemplateView):
+	template_name = 'mind_gym.html'
+
+
+
+## Library Views ##
+
+# Media Format
+
+class LibraryView(TemplateView):
+	template_name = 'library.html'
+
+
+class TutorialsView(TemplateView):
+	template_name = 'library/media/tutorials.html'
+
+
+class ArticlesView(TemplateView):
+	template_name = 'library/media/articles.html'
+
+
+class WorksheetsView(TemplateView):
+	template_name = 'library/media/worksheets.html'
+
+
+class AudioView(TemplateView):
+	template_name = 'library/media/audio.html'
+
+
+class VideosView(TemplateView):
+	template_name = 'library/media/videos.html'
+
+# End Media
+
+# Topic
+
+class OverallMentalView(TemplateView):
+	template_name = 'library/topic/overall_mental.html'
+
+
+class IdealPerformanceView(TemplateView):
+	template_name = 'library/topic/ideal_performance.html'
+
+
+class MindfullnessMeditationView(TemplateView):
+	template_name = 'library/topic/mindfullness_meditation.html'
+
+
+class SleepRestView(TemplateView):
+	template_name = 'library/topic/sleep_rest.html'
+
+
+class HealingRecoveryView(TemplateView):
+	template_name = 'library/topic/healing_recovery.html'
+
+
+
+class ManagingThoughtsFeelingsView(TemplateView):
+	template_name = 'library/topic/managing_thoughts_feelings.html'
+
+# End Topic
+
+## End Library

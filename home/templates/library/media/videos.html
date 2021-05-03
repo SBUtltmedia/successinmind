@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/library/media/videos.css' %}">
+	<div id='enclosure' class='container'>
+		<h1>Success In Mind Library</h1>
+		<h2>Videos</h2>
+		<h3>Overall Mental Fitness</h3>
+		<ul>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a></li>
+		</ul>
+		<br>
+		<h3>Ideal Performance State and Flow</h3>
+		<ul>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">How to Conquer and Olympic Biathalon</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">DJ Porter Performs Like A Star</a></li>
+		</ul>
+		<br>
+		<h3>Mindfulness and Meditation</h3>
+		<ul>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">What is Mindfulness and what does it mean to you?</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">How your Brain Transforms when you Meditate</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Jon Kabat-Zinn - Mindfulness 9 Attitudes</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Matt Killingsworth - Want to Be Happier</a></li>
+		</ul>
+		<br>
+		<h3>Healing And Recovery</h3>
+		<ul>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Getting Rehab Strong</a></li>
+		</ul>
+		<br>
+		<h3>Managing Thoughts And Feelings</h3>
+		<ul>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Mental Brakes to Avoid Mental Brakes</a></li>
+			<li><a href="{% static 'library/videos/' %}" target="_blank">Susan David - The Gift and Power of Emotional Courage</a></li>
+		</ul>
+		<br>
+	</div>
+{% endblock %}

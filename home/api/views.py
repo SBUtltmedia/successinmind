@@ -32,12 +32,14 @@ class UserApiView(APIView):
 			'password': request.data.get('password'),
 		}
 		sports = request.data.get('sports')
+		gender = request.data.get('gender')
 		serializer = serializers.JournalSerializer(data=data)
 		if serializer.is_valid():
 			user = serializer.save()
 			
 			profile = models.Profile(user=user)
 			profile.sports = sports
+			profile.gender = gender
 			profile.save()
 
 			return Response(serializer.data, status=status.HTTP_201_CREATED)

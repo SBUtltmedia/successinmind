@@ -20,11 +20,10 @@
 			<br>
 			<div class="row">
 				<div class="form-group col-md-6">
-					<label for="email">Email</label>
-					<input type="email" class="form-control" name="email" placeholder="Email">
-					<small id="emailHelp" class="form-text text-muted">
+					<label for="email">Email&emsp;<small id="emailHelp" class="form-text text-muted">
 						We'll never share your email with anyone else.
-					</small>
+					</small></label>
+					<input type="email" class="form-control" name="email" placeholder="Email">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="password">Password&emsp;</tv><span style="font-size: 90%; color: darkgray;">Password must be 8+ characters</span></label>
@@ -33,17 +32,28 @@
 			</div>
 			<div class='row'>
 				<div class="form-group col-md-6">
-					{% if failed %}
-					<br>
-						{% for fail_msg in failed %}
-							<p style="color:red">{{ fail_msg }}</p>
-						{% endfor %}
-					{% endif %}
+					<label for="gender">Sport(s)</label>
+					<div id='sport_select'>
+						<select class="form-control" name="gender">
+							<option style="display: none;"></option>
+							<option value='Man'>Men's</option>
+							<option value='Woman'>Women's</option>
+						</select>
+						<input type="text" class="form-control" name="sports" placeholder="Sports">
+					</div>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="password_confirm">Confirm Password</label>
 					<input type="password" class="form-control" name="c_password" placeholder="Password">
 				</div>
+			</div>
+			<div id='error_block'>
+				{% if failed %}
+				<br>
+					{% for fail_msg in failed %}
+						<p style="color:red">{{ fail_msg }}</p>
+					{% endfor %}
+				{% endif %}
 			</div>
 			<br>
 			<button type="submit" class="btn btn-primary">Sign up</button>

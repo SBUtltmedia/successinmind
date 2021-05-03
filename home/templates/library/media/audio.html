@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/library/media/audio.css' %}">
+	<div id='enclosure' class='container'>
+		<h1>Success In Mind Library</h1>
+		<h2>Audio Downloads</h2>
+		<h3>Ideal Performance State and Flow</h3>
+		<ul>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Imagery for Excellence in Swimming</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Imagery for Mental Toughness and Resiliency in Swimming</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Mind Gym Hypnosis for Free Throw Shooting</a></li>
+		</ul>
+		<br>
+		<h3>Mindfulness and Meditation</h3>
+		<ul>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Mindfulness of Body + Breath</a></li>
+		</ul>
+		<br>
+		<h3>Sleep and Rest</h3>
+		<ul>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Deep Rest and Relaxation</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Rest and Recovery Hypnosis</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Selling Into Deep Rest and Sleep</a></li>
+		</ul>
+		<br>
+		<h3>Healing and Recovery</h3>
+		<ul>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Assisting The Healing Process</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Autogenic Training</a></li>
+		</ul>
+		<br>
+	</div>
+{% endblock %}

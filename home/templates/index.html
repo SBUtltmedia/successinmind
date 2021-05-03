@@ -2,79 +2,73 @@
 {% load static %}
 {% block body_block %}
 	<link rel="stylesheet" href="{% static 'css/index.css' %}">
-	<div id='enclosure'>
-		<div id='outer_container' class='container'>
-			<div id='inner_container'>
-				<div id='inner_inner_container'>
-					<div class='banner'>
-						<h2>SUCCESS IN MIND</h2>
-						<h5>The Student-Athlete's Pathway to Success</h5>
-						<br>
-						<p>Success is peace of mind that is a direct result of self satisfaction in knowing 
-							that you made the effort to become the best you’re capable of becoming.</p>
-						<p>- John Wooden</p>
-						<br>
-					</div>
-					<div id='first_statement' class='statement row'>
-						<svg id='statement_1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker col-1 bi bi-volume-up-fill" viewBox="0 0 16 16">
-							<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
-							<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
-							<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
-						</svg>
-						<script>
-							var intro_audio_1 = document.createElement('audio');
-							intro_audio_1.setAttribute('src', "{% static 'audio/Success_in_Mind_Intro.m4a' %}");
-							intro_audio_1.volume = .3
-							$('#statement_1').click(function () {
-								if (intro_audio_1.currentTime == 0) {
-									intro_audio_2.pause();
-									intro_audio_2.currentTime = 0;
-									intro_audio_1.play();
-								} else if (intro_audio_1.currentTime > 0) {
-									intro_audio_1.pause();
-									intro_audio_1.currentTime = 0;
-								}
-							});
-						</script>
-						<p class='col-11'>Success in Mind is a program that combines Digital Technology with Sport and Performance Psychology
-							to provide proven and strategies and resources for transforming the Student - Athlete experience in to a Pathway to success.
-						</p>
-					</div>
-					<div class='statement row'>
-						<svg id='statement_2' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker col-1 bi bi-volume-up-fill" viewBox="0 0 16 16">
-							<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
-							<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
-							<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
-						</svg>
-						<script>
-							var intro_audio_2 = document.createElement('audio');
-							intro_audio_2.setAttribute('src', "{% static 'audio/Success_in_Mind_Description.m4a' %}");
-							intro_audio_2.volume = .3
-							$('#statement_2').click(function () {
-								if (intro_audio_2.currentTime == 0) {
-									intro_audio_1.pause();
-									intro_audio_1.currentTime = 0;
-									intro_audio_2.play();
-								} else if (intro_audio_2.currentTime > 0) {
-									intro_audio_2.pause();
-									intro_audio_2.currentTime = 0;
-								}
-							});
-						</script>
-						<p class='col-11'>This Pathway to Success utilizes an integrated App and Website design that begins with a Mental Fitness
-							Assessment to guide the Student - Athlete in the how to best engage the App based Goal Setting and Analysis component and the Library of educational resources on the website. Success in Mind Is designed to be used in a Self Directed manner or in conjunction with individual Sport Psychology Consultation.
-						</p>
-					</div>
-				</div>
-				<div id='sbu_splash'>
-					<img src="{% static 'images/sbu_logo.jpg' %}">
-					<h5>John J. Bowman, Ph.D.</h5>
-					<p>Sports Psychology Services</p>
-				</div>
+	<div id='outer_container' class="container">
+		<div id='inner_container'>
+			<div class='banner'>
+				<h2>SUCCESS IN MIND</h2>
+				<h5>The Student-Athlete's Pathway to Success</h5>
+				<br>
+				<p><i>Success is peace of mind that is a direct result of self satisfaction in knowing 
+					that you made the effort to become the best you’re capable of becoming.</i></p>
+				<p>- John Wooden</p>
+				<br>
+			</div>
+			<div id='first_statement' class='statement row'>
+				<svg id='statement_1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker col-1 bi bi-volume-up-fill" viewBox="0 0 16 16">
+					<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+					<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+					<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+				</svg>
+				<script>
+					var intro_audio_1 = document.createElement('audio');
+					intro_audio_1.setAttribute('src', "{% static 'audio/Success_in_Mind_Intro.m4a' %}");
+					intro_audio_1.volume = .3
+					$('#statement_1').click(function () {
+						if (intro_audio_1.currentTime == 0) {
+							intro_audio_2.pause();
+							intro_audio_2.currentTime = 0;
+							intro_audio_1.play();
+						} else if (intro_audio_1.currentTime > 0) {
+							intro_audio_1.pause();
+							intro_audio_1.currentTime = 0;
+						}
+					});
+				</script>
+				<p class='col-11'>Success in Mind is a program that combines Digital Technology with Sport and Performance Psychology
+					to provide proven and strategies and resources for transforming the Student - Athlete experience in to a Pathway to success.
+				</p>
+			</div>
+			<div class='statement row'>
+				<svg id='statement_2' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker col-1 bi bi-volume-up-fill" viewBox="0 0 16 16">
+					<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+					<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+					<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+				</svg>
+				<script>
+					var intro_audio_2 = document.createElement('audio');
+					intro_audio_2.setAttribute('src', "{% static 'audio/Success_in_Mind_Description.m4a' %}");
+					intro_audio_2.volume = .3
+					$('#statement_2').click(function () {
+						if (intro_audio_2.currentTime == 0) {
+							intro_audio_1.pause();
+							intro_audio_1.currentTime = 0;
+							intro_audio_2.play();
+						} else if (intro_audio_2.currentTime > 0) {
+							intro_audio_2.pause();
+							intro_audio_2.currentTime = 0;
+						}
+					});
+				</script>
+				<p class='col-11'>This Pathway to Success utilizes an integrated App and Website design that begins with a Mental Fitness
+					Assessment to guide the Student - Athlete in the how to best engage the App based Goal Setting and Analysis component and the Library of educational resources on the website. Success in Mind Is designed to be used in a Self Directed manner or in conjunction with individual Sport Psychology Consultation.
+				</p>
 			</div>
 		</div>
-		<div id='dr_b'>
-			<img src="{% static 'images/Dr_B.png' %}">
+		<div id='sbu_splash'>
+			<img src="{% static 'images/sbu_logo.jpg' %}">
+			<h5>John J. Bowman, Ph.D.</h5>
+			<p>Sport Psychology Services</p>
 		</div>
+		<img id='dr_b' src="{% static 'images/Dr_B.png' %}">
 	</div>
 {% endblock %}

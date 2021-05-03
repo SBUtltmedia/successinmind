@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/library/media/articles.css' %}">
+	<div id='enclosure' class='container'>
+		<h1>Success In Mind Library</h1>
+		<h2>Articles</h2>
+		<h3>Overall Mental Fitness</h3>
+		<ul>
+			<li><a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.doc' %}" target="_blank">Perform Like A Star</a></li>
+			<li><a href="{% static 'library/articles/Take-Your-Mental-Game-on-the-Road.doc' %}" target="_blank">Take your Mental Game on the road</a></li>
+			<li><a href="{% static 'library/articles/Four_Crazy_Rules.pdf' %}" target="_blank">Four Crazy Rules for Mental Toughness</a></li>
+			<li><a href="{% static 'library/articles/CHALLENGE_RESPONSE.pdf' %}" target="_blank">Challenge Response</a></li>
+		</ul>
+		<br>
+		<h3>Ideal Performance State and Flow</h3>
+		<ul>
+			<li><a href="" target="_blank">Drawing Confidence from the well</a></li>
+			<li><a href="{% static 'library/articles/How-to-Enter-The-Flow-State.docx' %}" target="_blank">How to Enter the Flow State</a></li>
+			<li><a href="{% static 'library/artices/DEVELOPING_THE_MENTAL_PLAN.doc' %}" target="_blank">Developing the Mental Plan</a></li>
+		</ul>
+		<br>
+		<h3>Mindfulness and Meditation</h3>
+		<ul>
+			<li><a href="{% static 'library/articles/Mindfulness_and_Performance.docx' %}" target="_blank">Mindfulness and Performance</a></li>
+			<li><a href="" target="_blank">What is Meditation</a></li>
+			<li><a href="" target="_blank">How to Practice Mindfulness in 5 simple steps</a></li>
+			<li><a href="{% static 'library/articles/HOW_TO_DEFEAT_FEAR.pdf' %}" target="_blank">Defeating Fear</a></li>
+		</ul>
+	</div>
+{% endblock %}

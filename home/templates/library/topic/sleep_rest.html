@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/library/topic/sleep_rest.css' %}">
+	<div id='enclosure' class='container'>
+		<h1>Success In Mind Library</h1>
+		<h2>Sleep and Rest</h2>
+		<h3>Audio Downloads</h3>
+		<ul>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Deep Rest and Relaxation</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Rest and Recovery Hypnosis</a></li>
+			<li><a href="{% static 'library/audio/' %}" target="_blank">Selling Into Deep Rest and Sleep</a></li>
+		</ul>
+		<br>
+	</div>
+{% endblock %}
