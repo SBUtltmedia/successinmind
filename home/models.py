@@ -211,4 +211,31 @@ class Commitment(models.Model):
 class Journal(models.Model):
 	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	date = models.DateTimeField()
-	text = models.TextField(max_length=2048)
+	training_goals = models.BooleanField()
+	mental_fitness_goals = models.BooleanField()
+	course_work_goals = models.BooleanField()
+	awesome_performance = models.TextField(max_length=2048)
+	great_practice = models.TextField(max_length=2048)
+	feeling_happy = models.TextField(max_length=2048)
+	feeling_confident = models.TextField(max_length=2048)
+	good_rest = models.TextField(max_length=2048)
+	confidence = models.PositiveSmallIntegerField()
+	concentration = models.PositiveSmallIntegerField()
+	composure = models.PositiveSmallIntegerField()
+	challenge_response = models.PositiveSmallIntegerField()
+	commitment = models.PositiveSmallIntegerField()
+	overall_performance_rating = models.PositiveSmallIntegerField()
+	overall_satisfaction_rating = models.PositiveSmallIntegerField()
+
+
+class WeeklyPlan(models.Model):
+	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	date = models.DateTimeField()
+	vision = models.TextField(max_length=2048)
+	training_goals = models.PositiveSmallIntegerField()
+	mental_fitness_goals = models.PositiveSmallIntegerField()
+	course_work_goals = models.PositiveSmallIntegerField()
+	recreational_goals = models.PositiveSmallIntegerField()
+	goal_for_overall_performance_rating = models.PositiveSmallIntegerField()
+	goal_for_level_of_satisfaction = models.PositiveSmallIntegerField()
+

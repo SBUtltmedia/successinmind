@@ -18,4 +18,17 @@ class MentalFitnessAssessmentSerializer(serializers.ModelSerializer):
 class JournalSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.Journal
-		fields = ['user', 'date', 'text']
+		fields = ('user', 'date', 'training_goals', 'mental_fitness_goals',
+		'course_work_goals', 'awesome_performance', 'great_practice',
+		'feeling_happy', 'feeling_confident', 'good_rest', 'confidence',
+		'concentration', 'composure', 'challenge_response', 'commitment',
+		'overall_performance_rating', 'overall_satisfaction_rating')
+
+
+class WeeklyPlanSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.WeeklyPlan
+		fields = ('user', 'date', 'vision', 'training_goals', 'mental_fitness_goals',
+		'course_work_goals', 'recreational_goals', 'goal_for_overall_performance_rating',
+		'goal_for_level_of_satisfaction')
+

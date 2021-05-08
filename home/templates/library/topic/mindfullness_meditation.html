@@ -1,31 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_block %}
-	<link rel="stylesheet" href="{% static 'css/library/topic/mindfullness_meditation.css' %}">
-	<div id='enclosure' class='container'>
-		<h1>Success In Mind Library</h1>
-		<h2>Ideal Performance State and Flow</h2>
-		<h3>Articles</h3>
-		<ul>
-			<li><a href="{% static 'library/articles/Mindfulness_and_Performance.docx' %}" target="_blank">Mindfulness and Performance</a></li>
-			<li><a href="" target="_blank">What is Meditation</a></li>
-			<li><a href="" target="_blank">How to Practice Mindfulness in 5 simple steps</a></li>
-			<li><a href="{% static 'library/articles/HOW_TO_DEFEAT_FEAR.pdf' %}" target="_blank">Defeating Fear</a></li>
-		</ul>
-		<br>
-		<h3>Audio Downloads</h3>
-		<ul>
-			<li><a href="{% static 'library/audio/' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a></li>
-			<li><a href="{% static 'library/audio/' %}" target="_blank">Mindfulness of Body + Breath</a></li>
-		</ul>
-		<br>
-		<h3>Videos</h3>
-		<ul>
-			<li><a href="{% static 'library/videos/' %}" target="_blank">What is Mindfulness and what does it mean to you?</a></li>
-			<li><a href="{% static 'library/videos/' %}" target="_blank">How your Brain Transforms when you Meditate</a></li>
-			<li><a href="{% static 'library/videos/' %}" target="_blank">Jon Kabat-Zinn - Mindfulness 9 Attitudes</a></li>
-			<li><a href="{% static 'library/videos/' %}" target="_blank">Matt Killingsworth - Want to Be Happier</a></li>
-		</ul>
-		<br>
-	</div>
+<link rel="stylesheet" href="{% static 'css/library/topic/mindfullness_meditation.css' %}">
+<div id='enclosure' class='container'>
+	<h1>Success In Mind Library</h1>
+	<h2>Ideal Performance State and Flow</h2>
+	<h3>Articles</h3>
+	<ul>
+		<li><a href="{% static 'library/articles/Mindfulness_and_Performance.pdf' %}" target="_blank">Mindfulness and
+				Performance</a></li>
+		<li><a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">What is Mindfulness</a>
+				</li>
+		<li><a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">How to Practice Mindfulness in 5 simple steps</a></li>
+		<li><a href="{% static 'library/articles/HOW_TO_DEFEAT_FEAR.pdf' %}" target="_blank">Defeating Fear</a></li>
+	</ul>
+	<br>
+	<h3>Audio Downloads</h3>
+	<ul>
+		<li><a href="{% static 'library/audio/' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a></li>
+		<li><a href="{% static 'library/audio/' %}" target="_blank">Mindfulness of Body + Breath</a></li>
+	</ul>
+	<br>
+	<h3>Videos</h3>
+	<ul>
+		<li><a href="{% static 'library/videos/' %}" target="_blank">What is Mindfulness and what does it mean to
+				you?</a></li>
+		<li><a href="{% static 'library/videos/' %}" target="_blank">How your Brain Transforms when you Meditate</a>
+		</li>
+		<li><a href="{% static 'library/videos/' %}" target="_blank">Jon Kabat-Zinn - Mindfulness 9 Attitudes</a></li>
+		<li><a href="{% static 'library/videos/' %}" target="_blank">Matt Killingsworth - Want to Be Happier</a></li>
+	</ul>
+	<br>
+</div>
 {% endblock %}
