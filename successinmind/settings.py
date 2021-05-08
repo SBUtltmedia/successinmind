@@ -87,12 +87,12 @@ DATABASES = {
 
         # Prod MySQL
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'NAME': 'jjbsuccess$successinmind',
-            'USER': 'jjbsuccess',
-            'PASSWORD': 'jjb1841764530',
-            'HOST': 'jjbsuccess.mysql.pythonanywhere-services.com',
-        },
+        # 'OPTIONS': {
+        'NAME': 'jjbsuccess$successinmind',
+        'USER': 'jjbsuccess',
+        'PASSWORD': 'jjb1841764530',
+        'HOST': 'jjbsuccess.mysql.pythonanywhere-services.com',
+        # },
     }
 }
 
