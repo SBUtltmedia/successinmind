@@ -16,7 +16,12 @@ class ApiMainView(APIView):
 				'GET - Returns all Journals by User (Filterable by \'date\')',
 				'POST - Creates new Journal record. Requires \'date\', \'text\'',
 				'DELETE - Deletes Journal record of user. Requires \'date\'',
-			]
+			],
+			'/api/weekly_plan': [
+				'GET - Returns all Weekly Plan by User (Filterable by \'date\')',
+				'POST - Creates new Weekly Plan record. Requires \'date\', \'text\'',
+				'DELETE - Deletes Weekly Plan record of user. Requires \'date\'',
+			],
 			})
 
 

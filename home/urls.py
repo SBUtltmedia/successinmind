@@ -17,6 +17,9 @@ urlpatterns = [
 	path('consultation/', views.ConsultationView.as_view(), name='consultation'),
 	path('mind_gym/', views.MindGymView.as_view(), name='mind_gym'),
 
+	# Export MFA
+	path('export_mfa/<int:pk>/', views.ExportMFA.as_view(), name='export_mfa'),
+
 	## Library ##
 	path('library/', views.LibraryView.as_view(), name='library'),	
 	# Media

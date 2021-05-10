@@ -1,14 +1,19 @@
 from django.contrib.auth.models import User
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render, redirect
 
+from rest_framework.response import Response
+from rest_framework import status
+
+
 
 # Create your views here.
 from home import forms
 from home import models
+from home import render_pdf
 
 
 import decimal
@@ -73,7 +78,7 @@ class SignUpView(TemplateView):
 		if len(request_values['email']) > 1:
 			if User.objects.filter(email=request_values['email']).exists():
 				self.fail_msg.append('User already exists!')
-			passed = False
+				passed = False
 		if len(request_values['first_name']) < 1:
 			self.fail_msg.append('Please input a first name!')
 			passed = False
@@ -244,7 +249,28 @@ class ProfileView(TemplateView):
 		user = self.request.user
 		context['MFAs'] = models.MentalFitnessAssessment.objects.filter(user=user)
 		context['profile'] = user.profile
+		context['journals'] = models.Journal.objects.filter(user=user)
+		context['weekly_plans'] = models.WeeklyPlan.objects.filter(user=user)
 		return context
+
+
+@method_decorator(login_required, name='dispatch')
+class ExportMFA(View):
+
+	def get(self, request, pk):
+		mfa = models.MentalFitnessAssessment.objects.get(pk=pk)
+		if mfa.user == request.user:
+			data = {
+				'mfa': mfa,
+				'confidence': models.Confidence.objects.filter(mfa_id=mfa)[0],
+				'concentration': models.Concentration.objects.filter(mfa_id=mfa)[0],
+				'composure': models.Composure.objects.filter(mfa_id=mfa)[0],
+				'challenge': models.Challenge.objects.filter(mfa_id=mfa)[0],
+				'commitment': models.Commitment.objects.filter(mfa_id=mfa)[0],
+			}
+			return render_pdf.Render.render('MFA_export.html', data)
+		else:
+			return render_pdf.Render.render('MFA_export.html', {})
 
 
 

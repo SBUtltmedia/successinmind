@@ -4,188 +4,131 @@
 {% block body_block %}
 	<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 	<div id='outer' class='container'>
-		<h1>User Profile</h1>
+		<h1>Athlete Profile</h1>
 		<br>
 		<div class='container'>
 			<h3>{{ user.get_full_name }},</h3><br>
 			<h5>Info:</h5>
 			<p>&emsp;Email: {{ user.email }}</p>
-			<p>&emsp;Gender: {{ profile.gender }}</p>
-			<p>&emsp;Sport(s): {{ profile.sports }}</p>
+			<p>&emsp;Sport: {{ profile.sports }}</p>
 			<br>
 			<!-- Mental Fitness Table -->
 			<h4>Mental Fitness Assessments</h4>
-			<div class='table-responsive'>
-				<table class='table table-striped'>
-					<thead class='table-dark'>
-						<tr>
-							<th>#</th>
-							<th>Date</th>
-							<th>Confidence</th>
-							<th>Concentration</th>
-							<th>Composure</th>
-							<th>Challenge</th>
-							<th>Commitment</th>
-							<th>Overall Level</th>
-							<th>Export</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for MFA in MFAs %}
+			{% if MFAs %}
+				<div class='table-responsive'>
+					<table class='table table-striped'>
+						<thead class='table-dark'>
 							<tr>
-								<th>{{ forloop.counter }}</th>
-								<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
-								<td>{{MFA.o_confidence}}/20</td>
-								<td>{{MFA.o_concentration}}/20</td>
-								<td>{{MFA.o_composure}}/20</td>
-								<td>{{MFA.o_challenge}}/20</td>
-								<td>{{MFA.o_commitment}}/20</td>
-								<td>{{MFA.total}}/100</td>
-								<td>
-									<a href="#">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-										</svg>
-									</a>
-								</td>
+								<th>#</th>
+								<th>Date</th>
+								<th>Confidence</th>
+								<th>Concentration</th>
+								<th>Composure</th>
+								<th>Challenge</th>
+								<th>Commitment</th>
+								<th>Overall Level</th>
+								<th>Export</th>
 							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
+						</thead>
+						<tbody>
+							{% for MFA in MFAs %}
+								<tr>
+									<th>{{ forloop.counter }}</th>
+									<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
+									<td>{{MFA.o_confidence}}/20</td>
+									<td>{{MFA.o_concentration}}/20</td>
+									<td>{{MFA.o_composure}}/20</td>
+									<td>{{MFA.o_challenge}}/20</td>
+									<td>{{MFA.o_commitment}}/20</td>
+									<td>{{MFA.total}}/100</td>
+									<td>
+										<a href="{% url 'home:export_mfa' pk=MFA.pk %}" target="_blank">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+											<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+											</svg>
+										</a>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			{% else %}
+				<td>Nothing here yet! Complete a Mental Fitness Assessment</td>
+				<br>
+			{% endif %}
 			<!-- End Mental Fitness Table -->
 			<br>
 			<!-- Goal Success Plans Table -->
 			<h4>Weekly Goal/Success Plans</h4>
-			<div class='table-responsive'>
-				<table class='table table-striped'>
-					<thead class='table-dark'>
-						<tr>
-							<th>#</th>
-							<th>Date</th>
-							<th>Text</th>
-							<th>Export</th>
-						</tr>
-					</thead>
-					<!-- <tbody>
-						{% for journal in journals %}
+			{% if journals %}
+				<div class='table-responsive'>
+					<table class='table table-striped'>
+						<thead class='table-dark'>
 							<tr>
-								<th>{{ forloop.counter }}</th>
-								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
-								<td>Text</td>
-								<td>
-									<a href="#">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-										</svg>
-									</a>
-								</td>
+								<th>#</th>
+								<th>Date</th>
+								<th>Goal For Overall Performance Rating</th>
+								<th>Goal For Level Of Satisfaction</th>
 							</tr>
-						{% endfor %}
-					</tbody> -->
-				</table>
-			</div>
+						</thead>
+						<tbody>
+							{% for plan in weekly_plans %}
+								<tr>
+									<th>{{ forloop.counter }}</th>
+									<td>{{plan.date|date:'n/j/Y'}} - {{plan.date|time:'g:i a'}}</td>
+									<td>{{ plan.goal_for_overall_performance_rating }}</td>
+									<td>{{ plan.goal_for_level_of_satisfaction }}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			{% else %}
+				<td>Nothing here yet! Complete a Weekly Goal/Success Plan</td>
+				<br>
+			{% endif %}
 			<!-- Goal Success Plans Table -->
 			<br>
 			<!-- Weekly Journals Table -->
 			<h4>Daily Success Journals</h4>
-			<div class='table-responsive'>
-				<table class='table table-striped'>
-					<thead class='table-dark'>
-						<tr>
-							<th>#</th>
-							<th>Date</th>
-							<th>Text</th>
-							<th>Export</th>
-						</tr>
-					</thead>
-					<!-- <tbody>
-						{% for journal in journals %}
+			{% if journals %}
+				<div class='table-responsive'>
+					<table class='table table-striped'>
+						<thead class='table-dark'>
 							<tr>
-								<th>{{ forloop.counter }}</th>
-								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
-								<td>Text</td>
-								<td>
-									<a href="#">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-										</svg>
-									</a>
-								</td>
+								<th>#</th>
+								<th>Date</th>
+								<th>Confidence</th>
+								<th>Concentration</th>
+								<th>Composure</th>
+								<th>Challenge Response</th>
+								<th>Commitment</th>
+								<th>Overall Performance Rating</th>
+								<th>Overall Satisfaction Rating</th>
 							</tr>
-						{% endfor %}
-					</tbody> -->
-				</table>
-			</div>
-			<!-- End Weekly Journals Table -->
-			<br>
-			<!-- Weekly Journals Table -->
-			<h4>Weekly Success Summaries</h4>
-			<div class='table-responsive'>
-				<table class='table table-striped'>
-					<thead class='table-dark'>
-						<tr>
-							<th>#</th>
-							<th>Date</th>
-							<th>Text</th>
-							<th>Export</th>
-						</tr>
-					</thead>
-					<!-- <tbody>
-						{% for journal in journals %}
-							<tr>
-								<th>{{ forloop.counter }}</th>
-								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
-								<td>Text</td>
-								<td>
-									<a href="#">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-										</svg>
-									</a>
-								</td>
-							</tr>
-						{% endfor %}
-					</tbody> -->
-				</table>
-			</div>
-			<!-- End Weekly Journals Table -->
-			<br>
-			<!-- Weekly Journals Table -->
-			<h4>Pathway To Success</h4>
-			<div class='table-responsive'>
-				<table class='table table-striped'>
-					<thead class='table-dark'>
-						<tr>
-							<th>#</th>
-							<th>Date</th>
-							<th>Text</th>
-							<th>Export</th>
-						</tr>
-					</thead>
-					<!-- <tbody>
-						{% for journal in journals %}
-							<tr>
-								<th>{{ forloop.counter }}</th>
-								<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
-								<td>Text</td>
-								<td>
-									<a href="#">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-										<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-										<path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-										</svg>
-									</a>
-								</td>
-							</tr>
-						{% endfor %}
-					</tbody> -->
-				</table>
-			</div>
+						</thead>
+						<tbody>
+							{% for journal in journals %}
+								<tr>
+									<th>{{ forloop.counter }}</th>
+									<td>{{journal.date|date:'n/j/Y'}} - {{journal.date|time:'g:i a'}}</td>
+									<td>{{journal.confidence}}</td>
+									<td>{{journal.concentration}}</td>
+									<td>{{journal.composure}}</td>
+									<td>{{journal.challenge_response}}</td>
+									<td>{{journal.commitment}}</td>
+									<td>{{journal.overall_performance_rating}}</td>
+									<td>{{journal.overall_satisfaction_rating}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			{% else %}
+				<td>Nothing here yet! Complete a Daily Success Journal</td>
+			{% endif %}
 			<!-- End Weekly Journals Table -->
 			<br>
 		</div>

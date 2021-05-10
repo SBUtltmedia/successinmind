@@ -12,3 +12,4 @@ admin.site.register(models.Composure)
 admin.site.register(models.Commitment)
 
 admin.site.register(models.Journal)
+admin.site.register(models.WeeklyPlan)

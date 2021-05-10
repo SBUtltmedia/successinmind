@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k=&3153)n0ffekse=1x1=ibjy1cqzp+qrh#cgi89sxegwbk(1c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.successinmind.me'
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'home',
+    'cn4',
 ]
 
 MIDDLEWARE = [
@@ -81,18 +83,16 @@ WSGI_APPLICATION = 'successinmind.wsgi.application'
 
 DATABASES = {
     'default': {
-        # SQLLite For Tests
+        ## SQLLite For Tests
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
 
-        # Prod MySQL
+        ## Prod MySQL
         'ENGINE': 'django.db.backends.mysql',
-        # 'OPTIONS': {
         'NAME': 'jjbsuccess$successinmind',
         'USER': 'jjbsuccess',
         'PASSWORD': 'jjb1841764530',
         'HOST': 'jjbsuccess.mysql.pythonanywhere-services.com',
-        # },
     }
 }
 

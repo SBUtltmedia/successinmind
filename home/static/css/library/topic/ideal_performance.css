@@ -16,3 +16,57 @@ h2 {
 	text-align: left;
 	margin-left: 38%;
 }
+
+iframe {
+	margin-bottom: 25px;
+}
+
+
+
+.tutorial_block {
+	border-bottom: 1px solid #990000;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+
+.tutorial_row {
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-left: 8%;
+	padding-right: 24.5%;
+	border-bottom: 1px solid #990000;
+}
+
+.first {
+	border-top: 1px solid #990000;
+	padding-top: 1%;
+}
+
+
+.tutorial_row h4 {
+	text-decoration: underline;
+}
+
+
+svg {
+	margin-top: 50%;
+	margin-bottom: 50%;
+	margin-left: 5%;
+	height: 35px;
+	width: 35px;
+}
+
+
+#smarter {
+	text-align: left;
+	padding-left: 35%;
+}
+
+.small_tutorial {
+	margin-top: 15%;
+}
