@@ -19,70 +19,72 @@
 		<h2>The object of this game is to connect four of your chips in a row</h2>
 		<h4 id='status'>The game will begin shortly...</h4>
 		<!-- Board -->
-		<div id='board'>
-			<!-- Column 1 -->
-			<ul class='col list-unstyled' id='col1'>
-				<li id='hover1' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
-			<!-- Column 2 -->
-			<ul class='col list-unstyled' id='col2'>
-				<li id='hover2' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
-			<!-- Column 3 -->
-			<ul class='col list-unstyled' id='col3'>
-				<li id='hover3' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
-			<!-- Column 4 -->
-			<ul class='col list-unstyled' id='col4'>
-				<li id='hover4' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
-			<!-- Column 5 -->
-			<ul class='col list-unstyled' id='col5'>
-				<li id='hover5' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
-			<!-- Column 6 -->
-			<ul class='col list-unstyled' id='col6'>
-				<li id='hover6' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
-			<!-- Column 7 -->
-			<ul class='col list-unstyled' id='col7'>
-				<li id='hover7' class='dot hover'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-				<li class='dot'></li>
-			</ul>
+		<div id='board_container'>
+			<div id='board'>
+				<!-- Column 1 -->
+				<ul class='col list-unstyled' id='col1'>
+					<li id='hover1' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+				<!-- Column 2 -->
+				<ul class='col list-unstyled' id='col2'>
+					<li id='hover2' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+				<!-- Column 3 -->
+				<ul class='col list-unstyled' id='col3'>
+					<li id='hover3' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+				<!-- Column 4 -->
+				<ul class='col list-unstyled' id='col4'>
+					<li id='hover4' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+				<!-- Column 5 -->
+				<ul class='col list-unstyled' id='col5'>
+					<li id='hover5' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+				<!-- Column 6 -->
+				<ul class='col list-unstyled' id='col6'>
+					<li id='hover6' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+				<!-- Column 7 -->
+				<ul class='col list-unstyled' id='col7'>
+					<li id='hover7' class='dot hover'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+					<li class='dot'></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<script src="{% static 'c4.js'%}"></script>

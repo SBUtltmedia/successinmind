@@ -5,7 +5,7 @@ var player1_name = prompt('Player 1\nEnter your name')
 if (player1_name === null) {player1_name = "Player 1"};
 
 var player2_name = prompt('Player 2\nEnter your name')
-if (player2_name === null) {player2_name = "Player 1"};
+if (player2_name === null) {player2_name = "Player 2"};
 
 
 var turn = true // True means player 1; False means player 2
@@ -81,6 +81,7 @@ function find_lowest_empty() {
 		if (color === white) {
 			$(dots[i]).css('background-color', get_player_color());
 			turn = !turn
+			display_player()
 			$(this).find('.hover').css('background-color', get_player_color())
 			if (check_win()) {
 				win()

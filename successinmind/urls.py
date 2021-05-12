@@ -38,7 +38,7 @@ urlpatterns = [
 # lucky to have a few that were actually typed and not just pictures of scrap paper.
 # I tried my best to keep this code neat, but I am just one man. A man who had three other classes
 # and a part time job. This was supposed to be a group project, but none of my other teammates
-# knew how to code. So it was just me. This was created over 2.5 sleepless weeks.
+# knew how to code. So it was just me. This was created over 3.5 sleepless weeks.
 # Now it has been passed to you. I barely bothered to comment anything. Maybe you 
 # will get a taste of the suffering I went through. Normally, I would not wish this on
 # another, but it is 4 am right now and I want to bang my head into the wall.

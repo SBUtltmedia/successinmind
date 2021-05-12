@@ -19,23 +19,476 @@
 			<p>Videos</p>
 		</div>
 		<br>
-		<h2>Mind Gym Workouts:</h2>
 		<br>
-		<h3>Overall Mental Fitness</h3>
+		<h2>Overall Mental Fitness</h2>
 		<br>
-		<h5>Narrated Tutorials</h5>
-	
+		<h4>Narrated Tutorials</h4>
+		<div class='tutorial_block first'>
+			<h5>Completing the Weekly Goal/Success Plan</h5>
+			<div class='tutorial_row first row'>
+					<div class='speaker_container col'>
+						<svg id='tutorial_1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+							<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+							<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+							<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+						</svg>
+					</div>
+					<script>
+						var tutorial_audio_1 = document.createElement('audio');
+						tutorial_audio_1.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_1_Audio.m4a' %}");
+						tutorial_audio_1.volume = .3
+						audios.push(tutorial_audio_1)
+						$('#tutorial_1').click(function () {
+							if (tutorial_audio_1.currentTime == 0) {
+								audios.forEach(audio => {
+									audio.pause();
+									audio.currentTime = 0;
+								});
+								tutorial_audio_1.play();
+							} else if (tutorial_audio_1.currentTime > 0) {
+								tutorial_audio_1.pause();
+								tutorial_audio_1.currentTime = 0;
+							}
+						});
+					</script>
+					<div class='tutorial_text col-8'>
+						<h4>Overview</h4>
+						<h5>Vision => Action Plan</h5>
+						<p>Confidence</p>
+						<p>Concentration</p>
+						<p>Composure</p>
+						<p>Challenge Response</p>
+						<p>Commitment</p>
+					</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_2' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_2 = document.createElement('audio');
+					tutorial_audio_2.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_2_Audio.m4a' %}");
+					tutorial_audio_2.volume = .3
+					audios.push(tutorial_audio_2)
+					$('#tutorial_2').click(function () {
+						if (tutorial_audio_2.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_2.play();
+						} else if (tutorial_audio_2.currentTime > 0) {
+							tutorial_audio_2.pause();
+							tutorial_audio_2.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Components</h4>
+					<p>Vision of the Week Ahead</p>
+					<p>Action Goal to Accomplish</p>
+					<p>Overall Performance Goal</p>
+					<p>Level of Satisfaction Goal</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_3' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_3 = document.createElement('audio');
+					tutorial_audio_3.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_3_Audio.m4a' %}");
+					tutorial_audio_3.volume = .3
+					audios.push(tutorial_audio_3)
+					$('#tutorial_3').click(function () {
+						if (tutorial_audio_3.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_3.play();
+						} else if (tutorial_audio_3.currentTime > 0) {
+							tutorial_audio_3.pause();
+							tutorial_audio_3.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Vision/Outcome Goals</h4>
+					<p>Believe it will Happen</p>
+					<p>Accomplishments</p>
+					<p>Positive Experiences</p>
+					<p>Self Satisfaction</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_4' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_4 = document.createElement('audio');
+					tutorial_audio_4.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_4_Audio.m4a' %}");
+					tutorial_audio_4.volume = .3
+					audios.push(tutorial_audio_4)
+					$('#tutorial_4').click(function () {
+						if (tutorial_audio_4.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_4.play();
+						} else if (tutorial_audio_4.currentTime > 0) {
+							tutorial_audio_4.pause();
+							tutorial_audio_4.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Progress Goals</h4>
+					<div id='smarter'>
+						<p><b>S</b>pecific</p>
+						<p><b>M</b>easurable</p>
+						<p><b>A</b>ction Oriented</p>
+						<p><b>R</b>ealistic</p>
+						<p><b>T</b>ime-Phased</p>
+						<p><b>E</b>xciting</p>
+						<p><b>R</b>ecorded</p>
+					</div>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_5' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_5 = document.createElement('audio');
+					tutorial_audio_5.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_5_Audio.m4a' %}");
+					tutorial_audio_5.volume = .3
+					audios.push(tutorial_audio_5)
+					$('#tutorial_5').click(function () {
+						if (tutorial_audio_5.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_5.play();
+						} else if (tutorial_audio_5.currentTime > 0) {
+							tutorial_audio_5.pause();
+							tutorial_audio_5.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Performance</h4>
+					<p>Commitment</p>
+					<p>Determination</p>
+					<p>Level of Demand</p>
+					<p>Level of Readiness</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_6' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_6 = document.createElement('audio');
+					tutorial_audio_6.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_6_Audio.m4a' %}");
+					tutorial_audio_6.volume = .3
+					audios.push(tutorial_audio_6)
+					$('#tutorial_6').click(function () {
+						if (tutorial_audio_6.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_6.play();
+						} else if (tutorial_audio_6.currentTime > 0) {
+							tutorial_audio_6.pause();
+							tutorial_audio_6.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Level of Satisfaction</h4>
+					<p>Self Esteem</p>
+					<p>Feeling of Accomplishment</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_7' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_7 = document.createElement('audio');
+					tutorial_audio_7.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_7_Audio.m4a' %}");
+					tutorial_audio_7.volume = .3
+					audios.push(tutorial_audio_7)
+					$('#tutorial_7').click(function () {
+						if (tutorial_audio_7.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_7.play();
+						} else if (tutorial_audio_7.currentTime > 0) {
+							tutorial_audio_7.pause();
+							tutorial_audio_7.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<p><i>If you have built castles in the air your work need not be lost</i></p>
+					<p><i>That is where they should be</i></p>
+					<p><i>Now put the foundation under them</i></p>
+					<p>- Henry David Thoreau</p>
+				</div>
+			</div>
+		</div>
+		<div class='tutorial_block'>
+			<h4>Completing the Daily Success Journal</h4>
+			<div class='tutorial_row first row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_8 = document.createElement('audio');
+					tutorial_audio_8.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_8_Audio.m4a' %}");
+					tutorial_audio_8.volume = .3
+					audios.push(tutorial_audio_8)
+					$('#tutorial_8').click(function () {
+						if (tutorial_audio_8.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_8.play();
+						} else if (tutorial_audio_8.currentTime > 0) {
+							tutorial_audio_8.pause();
+							tutorial_audio_8.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overview</h4>
+					<p>Everyday a Masterpiece</p>
+					<p>Focus on Tasks</p>
+					<p>Awareness of Positive Feelings</p>
+					<p>Monitor Mental Fitness</p>
+					<p>Evaluate Performance</p>
+					<p>Rate Satisfaction</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_9' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_9 = document.createElement('audio');
+					tutorial_audio_9.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_9_Audio.m4a' %}");
+					tutorial_audio_9.volume = .3
+					audios.push(tutorial_audio_9)
+					$('#tutorial_9').click(function () {
+						if (tutorial_audio_9.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_9.play();
+						} else if (tutorial_audio_9.currentTime > 0) {
+							tutorial_audio_9.pause();
+							tutorial_audio_9.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Goal Plan Record</h4>
+					<p>Focus on the Process</p>
+					<p>Time on Task</p>
+					<p>Ongoing Monitoring</p>
+					<p>End of Day</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_10' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_10 = document.createElement('audio');
+					tutorial_audio_10.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_10_Audio.m4a' %}");
+					tutorial_audio_10.volume = .3
+					audios.push(tutorial_audio_10)
+					$('#tutorial_10').click(function () {
+						if (tutorial_audio_10.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_10.play();
+						} else if (tutorial_audio_10.currentTime > 0) {
+							tutorial_audio_10.pause();
+							tutorial_audio_10.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Well Journal</h4>
+					<p>Neuroplasticity</p>
+					<p>180 Degree Shift</p>
+					<p>What Went Well</p>
+					<p>Noticing</p>
+					<p>Storing</p>
+					<p>Recording</p>
+					<p>Drawing</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_11' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_11 = document.createElement('audio');
+					tutorial_audio_11.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_11_Audio.m4a' %}");
+					tutorial_audio_11.volume = .3
+					audios.push(tutorial_audio_11)
+					$('#tutorial_11').click(function () {
+						if (tutorial_audio_11.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_11.play();
+						} else if (tutorial_audio_11.currentTime > 0) {
+							tutorial_audio_11.pause();
+							tutorial_audio_11.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Mental Fitness Record</h4>
+					<p>Confidence</p>
+					<p>Concentration</p>
+					<p>Composure</p>
+					<p>Challenge Response</p>
+					<p>Commitment</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_12' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_12 = document.createElement('audio');
+					tutorial_audio_12.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_12_Audio.m4a' %}");
+					tutorial_audio_12.volume = .3
+					audios.push(tutorial_audio_12)
+					$('#tutorial_12').click(function () {
+						if (tutorial_audio_12.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_12.play();
+						} else if (tutorial_audio_12.currentTime > 0) {
+							tutorial_audio_12.pause();
+							tutorial_audio_12.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Performance Rating</h4>
+					<p>Composite Rating</p>
+					<p>Goal Attainment Success</p>
+					<p>Exceptional Performances</p>
+					<p>Improved Mental Fitness</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_13' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_13 = document.createElement('audio');
+					tutorial_audio_13.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_13_Audio.m4a' %}");
+					tutorial_audio_13.volume = .3
+					audios.push(tutorial_audio_13)
+					$('#tutorial_13').click(function () {
+						if (tutorial_audio_13.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_13.play();
+						} else if (tutorial_audio_13.currentTime > 0) {
+							tutorial_audio_13.pause();
+							tutorial_audio_13.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Satisfaction Rating</h4>
+					<p>Coach John Wooden</p>
+					<p>Peace of Mind</p>
+					<p>Self Esteem</p>
+				</div>
+			</div>
+		</div>
 		<br>
-
 		<br>
-		<br>
-		<h5>Articles</h5>
+		<h4>Articles</h4>
 		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
 		<br>
 		<a href="{% static 'library/articles/Four_Crazy_Rules.pdf' %}" target="_blank">Four Crazy Rules for Mental Toughness</a>
 		<br>
 		<br>
-		<h5>Worksheets</h5>
+		<h4>Worksheets</h4>
 		<a href="{% static 'library/worksheets/Perform-Like-A-Star-Workbook.pdf' %}" target="_blank">Perform Like A Star Workbook</a>
 		<br>
 		<a href="{% static 'library/worksheets/Weekly-Goal-Plan-SB.pdf' %}" target="_blank">Weekly Goal / Success Plan</a>
@@ -43,45 +496,64 @@
 		<a href="{% static 'library/worksheets/Daily_Success_Journal.pdf' %}" target="_blank">Daily Success Journal</a>
 		<br>
 		<br>
-		<h5>Audio</h5>
-		<a href="{% static 'library/audio/' %}" target="_blank">Deep Rest and Relaxation</a>
+		<h4>Audio Downloads</h4>
+		<a href="{% static 'library/audio/Deep_Rest_and_Relax.mp3' %}" target="_blank">Deep Rest and Relaxation</a>		<br>
+		<br>
+		<h4>Videos</h4>
+		<div>
+			<h5>Dr B in 60 - Four Crazy Rules for Mental Toughness</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/jQzjBAsJ938">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>Jim Kwik - How to Learn in Half the Time</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/0r1LTe5KkSA">
+			</iframe> 
+		</div>
 		<br>
 		<br>
-		<h5>Videos</h5>
-		<a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a>
+		<h2>Dr. B's 5 C's</h2>
 		<br>
+		<h3>Confidence</h3>
 		<br>
-		<br>
-		<h3>Dr. B's 5 C's</h3>
-		<br>
-		<h4>Confidence</h4>
-		<br>
-		<h5>Narrated Tutorials</h5>
+		<h4>Narrated Tutorials</h4>
 		<br>
 		<br>
-		<h5>Articles</h5>
+		<h4>Articles</h4>
 		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
 		<br>
 		<a href="{% static 'library/articles/DEVELOPING_THE_MENTAL_PLAN.pdf' %}" target="_blank">Developing the Mental Plan</a>
 		<br>
 		<br>
-		<h5>Worksheets</h5>
+		<h4>Worksheets</h4>
 		<a href="{% static 'library/worksheets/Weekly-Goal-Plan-SB.pdf' %}" target="_blank">Weekly Goal / Success Plan</a>
 		<br>
 		<a href="{% static 'library/worksheets/Daily_Success_Journal.pdf' %}" target="_blank">Daily Success Journal</a>
 		<br>
 		<br>
-		<h5>Videos</h5>
-		<a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a>
+		<h4>Videos</h4>
+		<div>
+			<h5>Dr B in 60 - Four Crazy Rules for Mental Toughness</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/jQzjBAsJ938">
+			</iframe> 
+		</div>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">How to Conquer and Olympic Biathalon</a>
+		<div>
+			<h5>How to Conquer an Olympic Biathalon</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/uzpOFOjbkBw">
+			</iframe> 
+		</div>
 		<br>
 		<br>
-		<h4>Concentration</h4>
+		<h3>Concentration</h3>
 		<br>
-		<h5>Articles</h5>
+		<h4>Articles</h4>
 		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
 		<br>
 		<a href="{% static 'library/articles/DEVELOPING_THE_MENTAL_PLAN.pdf' %}" target="_blank">Developing the Mental Plan</a>
@@ -91,60 +563,469 @@
 		<a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">What is Mindfulness</a>
 		<br>
 		<br>
-		<h4>Composure</h4>
+		<h3>Composure</h3>
 		<br>
-		<h5>Articles</h5>
-		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
+		<h4>Narrated Tutorials</h4>
+		<div class='tutorial_block first'>
+			<h5>Completing the Weekly Goal/Success Plan</h5>
+			<div class='tutorial_row first row'>
+					<div class='speaker_container col'>
+						<svg id='tutorial_1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+							<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+							<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+							<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+						</svg>
+					</div>
+					<script>
+						var tutorial_audio_1 = document.createElement('audio');
+						tutorial_audio_1.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_1_Audio.m4a' %}");
+						tutorial_audio_1.volume = .3
+						audios.push(tutorial_audio_1)
+						$('#tutorial_1').click(function () {
+							if (tutorial_audio_1.currentTime == 0) {
+								audios.forEach(audio => {
+									audio.pause();
+									audio.currentTime = 0;
+								});
+								tutorial_audio_1.play();
+							} else if (tutorial_audio_1.currentTime > 0) {
+								tutorial_audio_1.pause();
+								tutorial_audio_1.currentTime = 0;
+							}
+						});
+					</script>
+					<div class='tutorial_text col-8'>
+						<h4>Overview</h4>
+						<h5>Vision => Action Plan</h5>
+						<p>Confidence</p>
+						<p>Concentration</p>
+						<p>Composure</p>
+						<p>Challenge Response</p>
+						<p>Commitment</p>
+					</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_2' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_2 = document.createElement('audio');
+					tutorial_audio_2.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_2_Audio.m4a' %}");
+					tutorial_audio_2.volume = .3
+					audios.push(tutorial_audio_2)
+					$('#tutorial_2').click(function () {
+						if (tutorial_audio_2.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_2.play();
+						} else if (tutorial_audio_2.currentTime > 0) {
+							tutorial_audio_2.pause();
+							tutorial_audio_2.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Components</h4>
+					<p>Vision of the Week Ahead</p>
+					<p>Action Goal to Accomplish</p>
+					<p>Overall Performance Goal</p>
+					<p>Level of Satisfaction Goal</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_3' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_3 = document.createElement('audio');
+					tutorial_audio_3.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_3_Audio.m4a' %}");
+					tutorial_audio_3.volume = .3
+					audios.push(tutorial_audio_3)
+					$('#tutorial_3').click(function () {
+						if (tutorial_audio_3.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_3.play();
+						} else if (tutorial_audio_3.currentTime > 0) {
+							tutorial_audio_3.pause();
+							tutorial_audio_3.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Vision/Outcome Goals</h4>
+					<p>Believe it will Happen</p>
+					<p>Accomplishments</p>
+					<p>Positive Experiences</p>
+					<p>Self Satisfaction</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_4' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_4 = document.createElement('audio');
+					tutorial_audio_4.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_4_Audio.m4a' %}");
+					tutorial_audio_4.volume = .3
+					audios.push(tutorial_audio_4)
+					$('#tutorial_4').click(function () {
+						if (tutorial_audio_4.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_4.play();
+						} else if (tutorial_audio_4.currentTime > 0) {
+							tutorial_audio_4.pause();
+							tutorial_audio_4.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Progress Goals</h4>
+					<div id='smarter'>
+						<p><b>S</b>pecific</p>
+						<p><b>M</b>easurable</p>
+						<p><b>A</b>ction Oriented</p>
+						<p><b>R</b>ealistic</p>
+						<p><b>T</b>ime-Phased</p>
+						<p><b>E</b>xciting</p>
+						<p><b>R</b>ecorded</p>
+					</div>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_5' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_5 = document.createElement('audio');
+					tutorial_audio_5.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_5_Audio.m4a' %}");
+					tutorial_audio_5.volume = .3
+					audios.push(tutorial_audio_5)
+					$('#tutorial_5').click(function () {
+						if (tutorial_audio_5.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_5.play();
+						} else if (tutorial_audio_5.currentTime > 0) {
+							tutorial_audio_5.pause();
+							tutorial_audio_5.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Performance</h4>
+					<p>Commitment</p>
+					<p>Determination</p>
+					<p>Level of Demand</p>
+					<p>Level of Readiness</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_6' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_6 = document.createElement('audio');
+					tutorial_audio_6.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_6_Audio.m4a' %}");
+					tutorial_audio_6.volume = .3
+					audios.push(tutorial_audio_6)
+					$('#tutorial_6').click(function () {
+						if (tutorial_audio_6.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_6.play();
+						} else if (tutorial_audio_6.currentTime > 0) {
+							tutorial_audio_6.pause();
+							tutorial_audio_6.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Level of Satisfaction</h4>
+					<p>Self Esteem</p>
+					<p>Feeling of Accomplishment</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_7' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_7 = document.createElement('audio');
+					tutorial_audio_7.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_7_Audio.m4a' %}");
+					tutorial_audio_7.volume = .3
+					audios.push(tutorial_audio_7)
+					$('#tutorial_7').click(function () {
+						if (tutorial_audio_7.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_7.play();
+						} else if (tutorial_audio_7.currentTime > 0) {
+							tutorial_audio_7.pause();
+							tutorial_audio_7.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<p><i>If you have built castles in the air your work need not be lost</i></p>
+					<p><i>That is where they should be</i></p>
+					<p><i>Now put the foundation under them</i></p>
+					<p>- Henry David Thoreau</p>
+				</div>
+			</div>
+		</div>
+		<div class='tutorial_block'>
+			<h4>Completing the Daily Success Journal</h4>
+			<div class='tutorial_row first row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_8 = document.createElement('audio');
+					tutorial_audio_8.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_8_Audio.m4a' %}");
+					tutorial_audio_8.volume = .3
+					audios.push(tutorial_audio_8)
+					$('#tutorial_8').click(function () {
+						if (tutorial_audio_8.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_8.play();
+						} else if (tutorial_audio_8.currentTime > 0) {
+							tutorial_audio_8.pause();
+							tutorial_audio_8.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overview</h4>
+					<p>Everyday a Masterpiece</p>
+					<p>Focus on Tasks</p>
+					<p>Awareness of Positive Feelings</p>
+					<p>Monitor Mental Fitness</p>
+					<p>Evaluate Performance</p>
+					<p>Rate Satisfaction</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_9' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_9 = document.createElement('audio');
+					tutorial_audio_9.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_9_Audio.m4a' %}");
+					tutorial_audio_9.volume = .3
+					audios.push(tutorial_audio_9)
+					$('#tutorial_9').click(function () {
+						if (tutorial_audio_9.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_9.play();
+						} else if (tutorial_audio_9.currentTime > 0) {
+							tutorial_audio_9.pause();
+							tutorial_audio_9.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Goal Plan Record</h4>
+					<p>Focus on the Process</p>
+					<p>Time on Task</p>
+					<p>Ongoing Monitoring</p>
+					<p>End of Day</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_10' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_10 = document.createElement('audio');
+					tutorial_audio_10.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_10_Audio.m4a' %}");
+					tutorial_audio_10.volume = .3
+					audios.push(tutorial_audio_10)
+					$('#tutorial_10').click(function () {
+						if (tutorial_audio_10.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_10.play();
+						} else if (tutorial_audio_10.currentTime > 0) {
+							tutorial_audio_10.pause();
+							tutorial_audio_10.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Well Journal</h4>
+					<p>Neuroplasticity</p>
+					<p>180 Degree Shift</p>
+					<p>What Went Well</p>
+					<p>Noticing</p>
+					<p>Storing</p>
+					<p>Recording</p>
+					<p>Drawing</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_11' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_11 = document.createElement('audio');
+					tutorial_audio_11.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_11_Audio.m4a' %}");
+					tutorial_audio_11.volume = .3
+					audios.push(tutorial_audio_11)
+					$('#tutorial_11').click(function () {
+						if (tutorial_audio_11.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_11.play();
+						} else if (tutorial_audio_11.currentTime > 0) {
+							tutorial_audio_11.pause();
+							tutorial_audio_11.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Mental Fitness Record</h4>
+					<p>Confidence</p>
+					<p>Concentration</p>
+					<p>Composure</p>
+					<p>Challenge Response</p>
+					<p>Commitment</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_12' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_12 = document.createElement('audio');
+					tutorial_audio_12.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_12_Audio.m4a' %}");
+					tutorial_audio_12.volume = .3
+					audios.push(tutorial_audio_12)
+					$('#tutorial_12').click(function () {
+						if (tutorial_audio_12.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_12.play();
+						} else if (tutorial_audio_12.currentTime > 0) {
+							tutorial_audio_12.pause();
+							tutorial_audio_12.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Performance Rating</h4>
+					<p>Composite Rating</p>
+					<p>Goal Attainment Success</p>
+					<p>Exceptional Performances</p>
+					<p>Improved Mental Fitness</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_13' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_13 = document.createElement('audio');
+					tutorial_audio_13.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_13_Audio.m4a' %}");
+					tutorial_audio_13.volume = .3
+					audios.push(tutorial_audio_13)
+					$('#tutorial_13').click(function () {
+						if (tutorial_audio_13.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_13.play();
+						} else if (tutorial_audio_13.currentTime > 0) {
+							tutorial_audio_13.pause();
+							tutorial_audio_13.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Satisfaction Rating</h4>
+					<p>Coach John Wooden</p>
+					<p>Peace of Mind</p>
+					<p>Self Esteem</p>
+				</div>
+			</div>
+		</div>
 		<br>
-		<a href="{% static 'library/articles/Drawing_Confidence_from_the_well.pdf' %}" target="_blank">Drawing Confidence from the well</a>
 		<br>
-		<a href="{% static 'library/articles/DEVELOPING_THE_MENTAL_PLAN.pdf' %}" target="_blank">Developing the Mental Plan</a>
-		<br>
-		<a href="{% static 'library/articles/Mindfulness_and_Performance.pdf' %}" target="_blank">Mindfulness and Performance</a>
-		<br>
-		<a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">What is Mindfulness</a>
-		<br>
-		<a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">How to Practice Mindfulness in 5 simple steps</a>
-		<br>
-		<br>
-		<h5>Worksheets</h5>
-		<a href="{% static 'library/worksheets/Perform-Like-A-Star-Workbook.pdf' %}" target="_blank">Perform Like A Star Workbook</a>
-		<br>
-		<a href="{% static 'library/worksheets/Weekly-Goal-Plan-SB.pdf' %}" target="_blank">Weekly Goal / Success Plan</a>
-		<br>
-		<a href="{% static 'library/worksheets/Daily_Success_Journal.pdf' %}" target="_blank">Daily Success Journal</a>
-		<br>
-		<a href="{% static 'library/worksheets/MY-WELL.pdf' %}" target="_blank">My Well</a>
-		<br>
-		<br>
-		<h5>Audio Downloads</h5>
-		<a href="{% static 'library/audio/' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a>
-		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Mindfulness of Body + Breath</a>
-		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Selling Into Deep Rest and Sleep</a>
-		<br>
-		<br>
-		<h5>Videos</h5>
-		<a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">What is Mindfulness and what does it mean to you?</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">How your Brain Transforms when you Meditate</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jon Kabat-Zinn - Mindfulness 9 Attitudes</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Matt Killingsworth - Want to Be Happier</a>
-		<br>
-		<br>
-		<h4>Composure</h4>
-		<br>
-		<h5>Narrated Tutorials</h5>
-		<br>
-		<br>
-		<h5>Articles</h5>
+		<h4>Articles</h4>
 		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
 		<br>
 		<a href="{% static 'library/articles/How-to-Enter-The-Flow-State.pdf' %}" target="_blank">How to Enter the Flow State</a>
@@ -158,7 +1039,7 @@
 		<a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">How to Practice Mindfulness in 5 simple steps</a>
 		<br>
 		<br>
-		<h5>Worksheets</h5>
+		<h4>Worksheets</h4>
 		<a href="{% static 'library/worksheets/Perform-Like-A-Star-Workbook.pdf' %}" target="_blank">Perform Like A Star Workbook</a>
 		<br>
 		<a href="{% static 'library/worksheets/Weekly-Goal-Plan-SB.pdf' %}" target="_blank">Weekly Goal / Success Plan</a>
@@ -170,29 +1051,59 @@
 		<a href="{% static 'library/worksheets/MENTAL_PLAN.pdf' %}" target="_blank">Mental Plan</a>
 		<br>
 		<br>
-		<h5>Audio Downloads</h5>
-		<a href="{% static 'library/audio/' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a>
+		<h4>Audio Downloads</h4>
+		<a href="{% static 'library/audio/Mindfulness_Training.mp3' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a>
 		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Mindfulness of Body + Breath</a>
-		<br>
-		<br>
-		<h5>Videos</h5>
-		<a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">What is Mindfulness and what does it mean to you?</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">How your Brain Transforms when you Meditate</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jon Kabat-Zinn - Mindfulness 9 Attitudes</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Matt Killingsworth - Want to Be Happier</a>
+		<a href="https://www.youtube.com/watch?v=glv565nlmEc&t=1s" target="_blank">Mindfulness of Body + Breath</a>
 		<br>
 		<br>
-		<h4>Challenge Response</h4>
+		<h4>Videos</h4>
+		<div>
+			<h5>Dr B in 60 - Four Crazy Rules for Mental Toughness</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/jQzjBAsJ938">
+			</iframe> 
+		</div>
 		<br>
-		<h5>Articles</h5>
+		<div>
+			<h5>Jim Kwik - How to Learn in Half the Time</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/0r1LTe5KkSA">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>What is Mindfulness and what does it mean to you?</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/iQn8Vuz_wCQ">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>How your Brain Transforms when you Meditate</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/hG-T03ZuPFs">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>Jon Kabat-Zinn - Mindfulness 9 Attitudes</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/kANsRoYcaAo">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>Matt Killingsworth - Want to Be Happier</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/t-YIueN4WyA">
+			</iframe> 
+		</div>
+		<br>
+		<br>
+		<h3>Challenge Response</h3>
+		<br>
+		<h4>Articles</h4>
 		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
 		<br>
 		<a href="{% static 'library/articles/CHALLENGE_RESPONSE.pdf' %}" target="_blank">Challenge Response</a>
@@ -204,44 +1115,546 @@
 		<a href="{% static 'library/articles/What-Is-Mindfulness.pdf' %}" target="_blank">How to Practice Mindfulness in 5 simple steps</a>
 		<br>
 		<br>
-		<h5>Worksheets</h5>
+		<h4>Worksheets</h4>
 		<a href="{% static 'library/worksheets/Perform-Like-A-Star-Workbook.pdf' %}" target="_blank">Perform Like A Star Workbook</a>
 		<br>
 		<br>
-		<h5>Audio Downloads</h5>
-		<a href="{% static 'library/audio/' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a>
+		<h4>Audio Downloads</h4>
+		<a href="{% static 'library/audio/Mindfulness_Training.mp3' %}" target="_blank">Mindfulness Training w/ Jon Kabat-Zinn</a>
 		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Mindfulness of Body + Breath</a>
+		<a href="https://www.youtube.com/watch?v=glv565nlmEc&t=1s" target="_blank">Mindfulness of Body + Breath</a>
 		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Selling Into Deep Rest and Sleep</a>
-		<br>
-		<br>
-		<h5>Videos</h5>
-		<a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">How to Conquer and Olympic Biathalon</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">DJ Porter Performs Like A Star</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Mental Brakes to Avoid Mental Brakes</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">What is Mindfulness and what does it mean to you?</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">How your Brain Transforms when you Meditate</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jon Kabat-Zinn - Mindfulness 9 Attitudes</a>
-		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Matt Killingsworth - Want to Be Happier</a>
+		<a href="{% static 'library/audio/Rest_and_Sleep.m4a' %}" target="_blank">Settling Into Deep Rest and Sleep</a>
 		<br>
 		<br>
-		<h4>Commitment</h4>
+		<h4>Videos</h4>
+		<div>
+			<h5>Dr B in 60 - Four Crazy Rules for Mental Toughness</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/jQzjBAsJ938">
+			</iframe> 
+		</div>
 		<br>
-		<h5>Narrated Tutorials</h5>
+		<div>
+			<h5>Jim Kwik - How to Learn in Half the Time</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/0r1LTe5KkSA">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>How to Conquer an Olympic Biathalon</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/uzpOFOjbkBw">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>DJ Porter Performs Like A Star</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/3IjwhpcEs1w">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>Mental Brakes to Avoid Mental Brakes</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/GnSHpBRLJrQ">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>What is Mindfulness and what does it mean to you?</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/iQn8Vuz_wCQ">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>How your Brain Transforms when you Meditate</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/hG-T03ZuPFs">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>Jon Kabat-Zinn - Mindfulness 9 Attitudes</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/kANsRoYcaAo">
+			</iframe> 
+		</div>
+		<br>
+		<div>
+			<h5>Matt Killingsworth - Want to Be Happier</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/t-YIueN4WyA">
+			</iframe> 
+		</div>
 		<br>
 		<br>
-		<h5>Articles</h5>
+		<h3>Commitment</h3>
+		<br>
+		<h4>Narrated Tutorials</h4>
+		<div class='tutorial_block first'>
+			<h5>Completing the Weekly Goal/Success Plan</h5>
+			<div class='tutorial_row first row'>
+					<div class='speaker_container col'>
+						<svg id='tutorial_1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+							<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+							<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+							<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+						</svg>
+					</div>
+					<script>
+						var tutorial_audio_1 = document.createElement('audio');
+						tutorial_audio_1.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_1_Audio.m4a' %}");
+						tutorial_audio_1.volume = .3
+						audios.push(tutorial_audio_1)
+						$('#tutorial_1').click(function () {
+							if (tutorial_audio_1.currentTime == 0) {
+								audios.forEach(audio => {
+									audio.pause();
+									audio.currentTime = 0;
+								});
+								tutorial_audio_1.play();
+							} else if (tutorial_audio_1.currentTime > 0) {
+								tutorial_audio_1.pause();
+								tutorial_audio_1.currentTime = 0;
+							}
+						});
+					</script>
+					<div class='tutorial_text col-8'>
+						<h4>Overview</h4>
+						<h5>Vision => Action Plan</h5>
+						<p>Confidence</p>
+						<p>Concentration</p>
+						<p>Composure</p>
+						<p>Challenge Response</p>
+						<p>Commitment</p>
+					</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_2' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_2 = document.createElement('audio');
+					tutorial_audio_2.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_2_Audio.m4a' %}");
+					tutorial_audio_2.volume = .3
+					audios.push(tutorial_audio_2)
+					$('#tutorial_2').click(function () {
+						if (tutorial_audio_2.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_2.play();
+						} else if (tutorial_audio_2.currentTime > 0) {
+							tutorial_audio_2.pause();
+							tutorial_audio_2.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Components</h4>
+					<p>Vision of the Week Ahead</p>
+					<p>Action Goal to Accomplish</p>
+					<p>Overall Performance Goal</p>
+					<p>Level of Satisfaction Goal</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_3' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_3 = document.createElement('audio');
+					tutorial_audio_3.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_3_Audio.m4a' %}");
+					tutorial_audio_3.volume = .3
+					audios.push(tutorial_audio_3)
+					$('#tutorial_3').click(function () {
+						if (tutorial_audio_3.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_3.play();
+						} else if (tutorial_audio_3.currentTime > 0) {
+							tutorial_audio_3.pause();
+							tutorial_audio_3.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Vision/Outcome Goals</h4>
+					<p>Believe it will Happen</p>
+					<p>Accomplishments</p>
+					<p>Positive Experiences</p>
+					<p>Self Satisfaction</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_4' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_4 = document.createElement('audio');
+					tutorial_audio_4.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_4_Audio.m4a' %}");
+					tutorial_audio_4.volume = .3
+					audios.push(tutorial_audio_4)
+					$('#tutorial_4').click(function () {
+						if (tutorial_audio_4.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_4.play();
+						} else if (tutorial_audio_4.currentTime > 0) {
+							tutorial_audio_4.pause();
+							tutorial_audio_4.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Progress Goals</h4>
+					<div id='smarter'>
+						<p><b>S</b>pecific</p>
+						<p><b>M</b>easurable</p>
+						<p><b>A</b>ction Oriented</p>
+						<p><b>R</b>ealistic</p>
+						<p><b>T</b>ime-Phased</p>
+						<p><b>E</b>xciting</p>
+						<p><b>R</b>ecorded</p>
+					</div>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_5' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_5 = document.createElement('audio');
+					tutorial_audio_5.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_5_Audio.m4a' %}");
+					tutorial_audio_5.volume = .3
+					audios.push(tutorial_audio_5)
+					$('#tutorial_5').click(function () {
+						if (tutorial_audio_5.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_5.play();
+						} else if (tutorial_audio_5.currentTime > 0) {
+							tutorial_audio_5.pause();
+							tutorial_audio_5.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Performance</h4>
+					<p>Commitment</p>
+					<p>Determination</p>
+					<p>Level of Demand</p>
+					<p>Level of Readiness</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_6' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_6 = document.createElement('audio');
+					tutorial_audio_6.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_6_Audio.m4a' %}");
+					tutorial_audio_6.volume = .3
+					audios.push(tutorial_audio_6)
+					$('#tutorial_6').click(function () {
+						if (tutorial_audio_6.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_6.play();
+						} else if (tutorial_audio_6.currentTime > 0) {
+							tutorial_audio_6.pause();
+							tutorial_audio_6.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Level of Satisfaction</h4>
+					<p>Self Esteem</p>
+					<p>Feeling of Accomplishment</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_7' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_7 = document.createElement('audio');
+					tutorial_audio_7.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_7_Audio.m4a' %}");
+					tutorial_audio_7.volume = .3
+					audios.push(tutorial_audio_7)
+					$('#tutorial_7').click(function () {
+						if (tutorial_audio_7.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_7.play();
+						} else if (tutorial_audio_7.currentTime > 0) {
+							tutorial_audio_7.pause();
+							tutorial_audio_7.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<p><i>If you have built castles in the air your work need not be lost</i></p>
+					<p><i>That is where they should be</i></p>
+					<p><i>Now put the foundation under them</i></p>
+					<p>- Henry David Thoreau</p>
+				</div>
+			</div>
+		</div>
+		<div class='tutorial_block'>
+			<h4>Completing the Daily Success Journal</h4>
+			<div class='tutorial_row first row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_8' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_8 = document.createElement('audio');
+					tutorial_audio_8.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_8_Audio.m4a' %}");
+					tutorial_audio_8.volume = .3
+					audios.push(tutorial_audio_8)
+					$('#tutorial_8').click(function () {
+						if (tutorial_audio_8.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_8.play();
+						} else if (tutorial_audio_8.currentTime > 0) {
+							tutorial_audio_8.pause();
+							tutorial_audio_8.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overview</h4>
+					<p>Everyday a Masterpiece</p>
+					<p>Focus on Tasks</p>
+					<p>Awareness of Positive Feelings</p>
+					<p>Monitor Mental Fitness</p>
+					<p>Evaluate Performance</p>
+					<p>Rate Satisfaction</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_9' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_9 = document.createElement('audio');
+					tutorial_audio_9.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_9_Audio.m4a' %}");
+					tutorial_audio_9.volume = .3
+					audios.push(tutorial_audio_9)
+					$('#tutorial_9').click(function () {
+						if (tutorial_audio_9.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_9.play();
+						} else if (tutorial_audio_9.currentTime > 0) {
+							tutorial_audio_9.pause();
+							tutorial_audio_9.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Goal Plan Record</h4>
+					<p>Focus on the Process</p>
+					<p>Time on Task</p>
+					<p>Ongoing Monitoring</p>
+					<p>End of Day</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_10' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_10 = document.createElement('audio');
+					tutorial_audio_10.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_10_Audio.m4a' %}");
+					tutorial_audio_10.volume = .3
+					audios.push(tutorial_audio_10)
+					$('#tutorial_10').click(function () {
+						if (tutorial_audio_10.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_10.play();
+						} else if (tutorial_audio_10.currentTime > 0) {
+							tutorial_audio_10.pause();
+							tutorial_audio_10.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Well Journal</h4>
+					<p>Neuroplasticity</p>
+					<p>180 Degree Shift</p>
+					<p>What Went Well</p>
+					<p>Noticing</p>
+					<p>Storing</p>
+					<p>Recording</p>
+					<p>Drawing</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_11' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_11 = document.createElement('audio');
+					tutorial_audio_11.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_11_Audio.m4a' %}");
+					tutorial_audio_11.volume = .3
+					audios.push(tutorial_audio_11)
+					$('#tutorial_11').click(function () {
+						if (tutorial_audio_11.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_11.play();
+						} else if (tutorial_audio_11.currentTime > 0) {
+							tutorial_audio_11.pause();
+							tutorial_audio_11.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Mental Fitness Record</h4>
+					<p>Confidence</p>
+					<p>Concentration</p>
+					<p>Composure</p>
+					<p>Challenge Response</p>
+					<p>Commitment</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_12' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_12 = document.createElement('audio');
+					tutorial_audio_12.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_12_Audio.m4a' %}");
+					tutorial_audio_12.volume = .3
+					audios.push(tutorial_audio_12)
+					$('#tutorial_12').click(function () {
+						if (tutorial_audio_12.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_12.play();
+						} else if (tutorial_audio_12.currentTime > 0) {
+							tutorial_audio_12.pause();
+							tutorial_audio_12.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Performance Rating</h4>
+					<p>Composite Rating</p>
+					<p>Goal Attainment Success</p>
+					<p>Exceptional Performances</p>
+					<p>Improved Mental Fitness</p>
+				</div>
+			</div>
+			<div class='tutorial_row row'>
+				<div class='speaker_container col'>
+					<svg id='tutorial_13' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="speaker bi bi-volume-up-fill" viewBox="0 0 16 16">
+						<path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+						<path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+						<path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+					</svg>
+				</div>
+				<script>
+					var tutorial_audio_13 = document.createElement('audio');
+					tutorial_audio_13.setAttribute('src', "{% static 'library/tutorial_audio/Tutorial_Board_13_Audio.m4a' %}");
+					tutorial_audio_13.volume = .3
+					audios.push(tutorial_audio_13)
+					$('#tutorial_13').click(function () {
+						if (tutorial_audio_13.currentTime == 0) {
+							audios.forEach(audio => {
+								audio.pause();
+								audio.currentTime = 0;
+							});
+							tutorial_audio_13.play();
+						} else if (tutorial_audio_13.currentTime > 0) {
+							tutorial_audio_13.pause();
+							tutorial_audio_13.currentTime = 0;
+						}
+					});
+				</script>
+				<div class='tutorial_text col-8'>
+					<h4>Overall Satisfaction Rating</h4>
+					<p>Coach John Wooden</p>
+					<p>Peace of Mind</p>
+					<p>Self Esteem</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<h4>Articles</h4>
 		<a href="{% static 'library/articles/PERFORM-LIKE-A-STAR-Master.pdf' %}" target="_blank">Perform Like A Star</a>
 		<br>
 		<a href="{% static 'library/articles/Four_Crazy_Rules.pdf' %}" target="_blank">Four Crazy Rules for Mental Toughness</a>
@@ -253,7 +1666,7 @@
 		<a href="{% static 'library/articles/DEVELOPING_THE_MENTAL_PLAN.pdf' %}" target="_blank">Developing the Mental Plan</a>
 		<br>
 		<br>
-		<h5>Worksheets</h5>
+		<h4>Worksheets</h4>
 		<a href="{% static 'library/worksheets/Perform-Like-A-Star-Workbook.pdf' %}" target="_blank">Perform Like A Star Workbook</a>
 		<br>
 		<a href="{% static 'library/worksheets/Weekly-Goal-Plan-SB.pdf' %}" target="_blank">Weekly Goal / Success Plan</a>
@@ -263,26 +1676,56 @@
 		<a href="{% static 'library/worksheets/MENTAL_PLAN.pdf' %}" target="_blank">Mental Plan</a>
 		<br>
 		<br>
-		<h5>Audio Downloads</h5>
-		<a href="{% static 'library/audio/' %}" target="_blank">Deep Rest and Relaxation</a>
+		<h4>Audio Downloads</h4>
+		<a href="{% static 'library/audio/Deep_Rest_and_Relax.mp3' %}" target="_blank">Deep Rest and Relaxation</a>
 		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Rest and Recovery Hypnosis</a>
+		<a href="{% static 'library/audio/Rest_and_Recovery_Hypnosis.mp3' %}" target="_blank">Rest and Recovery Hypnosis</a>
 		<br>
-		<a href="{% static 'library/audio/' %}" target="_blank">Selling Into Deep Rest and Sleep</a>
+		<a href="{% static 'library/audio/Rest_and_Sleep.m4a' %}" target="_blank">Settling Into Deep Rest and Sleep</a>
 		<br>
 		<br>
-		<h5>Videos</h5>
-		<a href="{% static 'library/videos/' %}" target="_blank">Dr B in 60 - Four Crazy Rules for Mental Toughness</a>
+		<h4>Videos</h4>
+		<div>
+			<h5>Dr B in 60 - Four Crazy Rules for Mental Toughness</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/jQzjBAsJ938">
+			</iframe> 
+		</div>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Jim Kwik - How to Learn in Half the Time</a>
+		<div>
+			<h5>Jim Kwik - How to Learn in Half the Time</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/0r1LTe5KkSA">
+			</iframe> 
+		</div>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">How to Conquer and Olympic Biathalon</a>
+		<div>
+			<h5>How to Conquer an Olympic Biathalon</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/uzpOFOjbkBw">
+			</iframe> 
+		</div>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">DJ Porter Performs Like A Star</a>
+		<div>
+			<h5>DJ Porter Performs Like A Star</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/3IjwhpcEs1w">
+			</iframe> 
+		</div>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Mental Brakes to Avoid Mental Brakes</a>
+		<div>
+			<h5>Mental Brakes to Avoid Mental Brakes</h5>
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/GnSHpBRLJrQ">
+			</iframe> 
+		</div>
 		<br>
-		<a href="{% static 'library/videos/' %}" target="_blank">Susan David - The Gift and Power of Emotional Courage</a>
+		<div>
+			<h5>Susan David - The Gift and Power of Emotional Courage</h5>
+			<iframe width="420" height="315"
+			src="https://embed.ted.com/talks/susan_david_the_gift_and_power_of_emotional_courage">
+			</iframe> 
+		</div>
 		<br>
 		<br>
 	</div>
