@@ -26,9 +26,12 @@ SECRET_KEY = 'django-insecure-k=&3153)n0ffekse=1x1=ibjy1cqzp+qrh#cgi89sxegwbk(1c
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'www.successinmind.me'
-]
+if DEBUG:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = [
+        'www.successinmind.me'
+    ]
 
 
 # Application definition
@@ -81,20 +84,25 @@ WSGI_APPLICATION = 'successinmind.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        ## SQLLite For Tests
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-
-        ## Prod MySQL
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'jjbsuccess$successinmind',
-        'USER': 'jjbsuccess',
-        'PASSWORD': 'jjb1841764530',
-        'HOST': 'jjbsuccess.mysql.pythonanywhere-services.com',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            ## SQLLite For Tests
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            ## Prod MySQL
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'jjbsuccess$successinmind',
+            'USER': 'jjbsuccess',
+            'PASSWORD': 'jjb1841764530',
+            'HOST': 'jjbsuccess.mysql.pythonanywhere-services.com',
+        }
+    }
 
 
 # Password validation
