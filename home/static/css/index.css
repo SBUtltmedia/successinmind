@@ -1,3 +1,7 @@
+.container {
+	max-width: none;
+}
+
 
 #outer_container {
 	position: relative;
@@ -35,4 +39,34 @@
 	left: -25%;
 	max-width: 35%;
 	pointer-events: none;
+}
+
+
+@media only screen and (max-width: 1200px) {
+	#dr_b {
+		visibility: hidden;
+	}
+
+	.row {
+		display: inline;
+	}
+
+	#outer_container {
+		position: initial;
+		margin: 5%;
+		width: auto;
+	}
+
+	#inner_container {
+		margin: 0%;
+		padding: 5%;
+	}
+
+	#sbu_splash img {
+		max-width: 100%;
+	}
+
+	#first_statement {
+		margin-right: 0%;
+	}
 }
