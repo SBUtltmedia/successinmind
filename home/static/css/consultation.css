@@ -1,9 +1,9 @@
 
-.container {
-	margin-top: 30px;
+#enclosure {
+	margin: 3%;
 	border: 2px solid #990000;
 	border-radius: 15px;
-	padding: 20px;
+	padding: 2%;
 	text-align: center;
 }
 
@@ -12,17 +12,20 @@ h1 {
 }
 
 #banner {
-	margin-bottom: 35px;
+	margin-bottom: 4%;
 }
 
 h3 {
-	margin-top: 35px;
-	margin-bottom: 35px;
+	margin-top: 2%;
+	margin-bottom: 4%;
 }
 
 #points {
-	margin-left: 37%;
-	text-align: left;
-	margin-bottom: 30px;
+	margin-bottom: 2%;
 	font-size: 115%;
+}
+
+#points ul {
+	text-align: left;
+	display:inline-block;
 }
