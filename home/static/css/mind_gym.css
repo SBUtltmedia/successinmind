@@ -1,10 +1,9 @@
 
-.container {
-	margin-top: 30px;
-	margin-bottom: 30px;
+#enclosure {
+	margin: 5%;
 	border: 2px solid #990000;
 	border-radius: 15px;
-	padding: 20px;
+	padding: 2%;
 	text-align: center;
 }
 
@@ -18,19 +17,42 @@
 	margin-top: 30px;
 	margin-left: 10%;
 	margin-right: 10%;
-	padding-left: 8%;
-	padding-right: 24.5%;
+	padding-left: 23%;
+	padding-right: 30%;
+	border-bottom: 1px #990000 solid;
 }
 
 
 
 svg {
-	margin-top: 50%;
-	margin-bottom: 50%;
-	margin-left: 5%;
+	top: 50%;
+	position: relative;
 	height: 35px;
 	width: 35px;
 }
+
+
+@media only screen and (max-width: 780px) {
+	svg {
+		position: initial;
+	}
+
+	.tutorial_row {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+
+@media only screen and (max-width: 520px) {
+	iframe {
+		width: 90%;
+		height: auto;
+	}
+}
+
+
 
 .tutorial_block h3 {
 	border-bottom: 1px solid #990000;
@@ -51,29 +73,10 @@ svg {
 }
 
 
-
-.tutorial_row {
-	text-align: center;
-	margin-top: 30px;
-	margin-left: 10%;
-	margin-right: 10%;
-	padding-left: 8%;
-	padding-right: 24.5%;
-	border-bottom: 1px solid #990000;
-}
-
 .first {
 	padding-top: 1%;
 }
 
-
-svg {
-	margin-top: 50%;
-	margin-bottom: 50%;
-	margin-left: 5%;
-	height: 35px;
-	width: 35px;
-}
 
 
 #smarter {
