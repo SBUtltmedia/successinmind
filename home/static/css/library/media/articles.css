@@ -1,10 +1,9 @@
 
-.container {
-	margin-top: 30px;
-	margin-bottom: 30px;
+#enclosure {
+	margin: 5%;
 	border: 2px solid #990000;
 	border-radius: 15px;
-	padding: 20px;
+	padding: 2%;
 	text-align: center;
 }
 
@@ -12,7 +11,7 @@ h2 {
 	margin-bottom: 30px;
 }
 
-.container ul {
+#enclosure ul {
 	text-align: left;
-	margin-left: 38%;
+	display:inline-block;
 }

@@ -1,9 +1,9 @@
 
-#sign_up_block {
-	margin-top: 30px;
-	border: 1px solid #990000;
+#enclosure {
+	margin: 5%;
+	border: 2px solid #990000;
 	border-radius: 15px;
-	padding: 40px;
+	padding: 2%;
 }
 
 h1 {
@@ -34,7 +34,7 @@ h1 {
 
 #sport_select * {
 	display: inline;
-	width: 49.49%;
+	width: 49.25%;
 }
 
 #error_block {

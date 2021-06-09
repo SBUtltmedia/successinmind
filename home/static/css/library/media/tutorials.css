@@ -1,10 +1,9 @@
 
-.container {
-	margin-top: 30px;
-	margin-bottom: 30px;
+#enclosure {
+	margin: 5%;
 	border: 2px solid #990000;
 	border-radius: 15px;
-	padding: 20px;
+	padding: 2%;
 	text-align: center;
 }
 
@@ -26,16 +25,6 @@ h2 {
 }
 
 
-.tutorial_row {
-	text-align: center;
-	margin-top: 30px;
-	margin-left: 10%;
-	margin-right: 10%;
-	padding-left: 8%;
-	padding-right: 24.5%;
-	border-bottom: 1px solid #990000;
-}
-
 .first {
 	border-top: 1px solid #990000;
 	padding-top: 1%;
@@ -47,14 +36,36 @@ h2 {
 }
 
 
+.tutorial_row {
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-left: 23%;
+	padding-right: 30%;
+	border-bottom: 1px #990000 solid;
+}
+
+
+
 svg {
-	margin-top: 50%;
-	margin-bottom: 50%;
-	margin-left: 5%;
+	top: 50%;
+	position: relative;
 	height: 35px;
 	width: 35px;
 }
 
+
+@media only screen and (max-width: 780px) {
+	svg {
+		position: initial;
+	}
+
+	.tutorial_row {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
 
 #smarter {
 	text-align: left;
