@@ -10,23 +10,39 @@ var playlist_1 = [
 var playlist_1_index = 0;
 var players_1 = $('#playlist_1 iframe')
 
+//// Old function for when the player had a cool but unresponsive carrousel
+// function manage_players_1 () {
+// 	if (playlist_1_index == 0) {
+// 		$(players_1[0]).fadeOut()
+// 		$('#back_arrow_1').fadeOut()
+// 	} else if (playlist_1_index == (playlist_1.length - 1)) {
+// 		$(players_1.last()).fadeOut()
+// 		$('#forward_arrow_1').fadeOut()
+// 	} else {
+// 		$(players_1[0]).fadeIn()
+// 		$(players_1.last()).fadeIn()
+// 		$('#back_arrow_1').fadeIn()
+// 		$('#forward_arrow_1').fadeIn()
+// 	}
+// 	$(players_1[0]).attr('src', playlist_1[playlist_1_index - 1]);
+// 	$(players_1[1]).attr('src', playlist_1[playlist_1_index]);
+// 	$(players_1[2]).attr('src', playlist_1[playlist_1_index + 1]);
+// }
+
+
 function manage_players_1 () {
 	if (playlist_1_index == 0) {
-		$(players_1[0]).fadeOut()
 		$('#back_arrow_1').fadeOut()
 	} else if (playlist_1_index == (playlist_1.length - 1)) {
-		$(players_1.last()).fadeOut()
 		$('#forward_arrow_1').fadeOut()
 	} else {
-		$(players_1[0]).fadeIn()
-		$(players_1.last()).fadeIn()
 		$('#back_arrow_1').fadeIn()
 		$('#forward_arrow_1').fadeIn()
 	}
-	$(players_1[0]).attr('src', playlist_1[playlist_1_index - 1]);
-	$(players_1[1]).attr('src', playlist_1[playlist_1_index]);
-	$(players_1[2]).attr('src', playlist_1[playlist_1_index + 1]);
+	$(players_1[0]).attr('src', playlist_1[playlist_1_index])
 }
+
+
 
 $('#back_arrow_1').click(function () {
 	playlist_1_index--;
@@ -50,22 +66,36 @@ var playlist_2 = [
 var playlist_2_index = 0;
 var players_2 = $('#playlist_2 iframe')
 
+//// Old function for when the player had a cool but unresponsive carrousel
+// function manage_players_2 () {
+// 	if (playlist_2_index == 0) {
+// 		$(players_2[0]).fadeOut()
+// 		$('#back_arrow_2').fadeOut()
+// 	} else if (playlist_2_index == (playlist_2.length - 1)) {
+// 		$(players_2.last()).fadeOut()
+// 		$('#forward_arrow_2').fadeOut()
+// 	} else {
+// 		$(players_2[0]).fadeIn()
+// 		$(players_2.last()).fadeIn()
+// 		$('#back_arrow_2').fadeIn()
+// 		$('#forward_arrow_2').fadeIn()
+// 	}
+// 	$(players_2[0]).attr('src', playlist_2[playlist_2_index - 1]);
+// 	$(players_2[1]).attr('src', playlist_2[playlist_2_index]);
+// 	$(players_2[2]).attr('src', playlist_2[playlist_2_index + 1]);
+// }
+
+
 function manage_players_2 () {
 	if (playlist_2_index == 0) {
-		$(players_2[0]).fadeOut()
 		$('#back_arrow_2').fadeOut()
 	} else if (playlist_2_index == (playlist_2.length - 1)) {
-		$(players_2.last()).fadeOut()
 		$('#forward_arrow_2').fadeOut()
 	} else {
-		$(players_2[0]).fadeIn()
-		$(players_2.last()).fadeIn()
 		$('#back_arrow_2').fadeIn()
 		$('#forward_arrow_2').fadeIn()
 	}
-	$(players_2[0]).attr('src', playlist_2[playlist_2_index - 1]);
-	$(players_2[1]).attr('src', playlist_2[playlist_2_index]);
-	$(players_2[2]).attr('src', playlist_2[playlist_2_index + 1]);
+	$(players_2[0]).attr('src', playlist_2[playlist_2_index])
 }
 
 $('#back_arrow_2').click(function () {

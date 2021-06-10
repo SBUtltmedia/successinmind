@@ -3,10 +3,10 @@
 {% load static %}
 {% block body_block %}
 	<link rel="stylesheet" href="{% static 'css/profile.css' %}">
-	<div id='outer' class='container'>
+	<div id='outer'>
 		<h1>Athlete Profile</h1>
 		<br>
-		<div class='container'>
+		<div id='inner'>
 			<h3>{{ user.get_full_name }},</h3><br>
 			<h5>Info:</h5>
 			<p>&emsp;Email: {{ user.email }}</p>
