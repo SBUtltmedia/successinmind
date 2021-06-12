@@ -42,23 +42,31 @@ nav li a {
 	height: 100%;
 }
 
-@media screen and (max-width: 1105px) and (min-width: 990px) {
+
+@media screen and (max-width: 1327px) and (min-width: 991px) {
+	nav li {
+		font-size: 90%;
+	}
+
+	.navbar-brand {
+		margin-right: 0%;
+	}
+}
+
+
+@media screen and (max-width: 1181px) and (min-width: 991px)  {
 	nav li {
 		font-size: 80%;
 	}
 }
 
-@media screen and (max-width: 1250px) and (min-width: 1105px) {
+@media screen and (max-width: 1058px) and (min-width: 991px) {
 	nav li {
-		font-size: 90%;
+		font-size: 75%;
 	}
 }
 
-@media screen and (max-width: 1250px) {
-	.navbar-brand {
-		margin-right: 0%;
-	}
-}
+
 
 @media (max-width: 990px) {
 	#divider {
