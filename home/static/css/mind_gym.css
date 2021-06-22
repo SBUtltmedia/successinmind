@@ -15,7 +15,7 @@
 .tutorial_row {
 	text-align: center;
 	margin-top: 30px;
-	margin-left: 10%;
+	margin-left: 12%;
 	margin-right: 10%;
 	padding-left: 23%;
 	padding-right: 30%;
@@ -55,7 +55,10 @@ svg {
 
 
 .tutorial_block h3 {
+	border-top: 1px solid #990000;
 	border-bottom: 1px solid #990000;
+	padding-top: 1%;
+	padding-bottom: 1%;
 	margin-left: 30%;
 	margin-right: 30%;
 }
@@ -68,7 +71,7 @@ svg {
 	margin-right: 2%;
 }
 
-.tutorial_block h3, h2 {
+.tutorial_block h2 {
 	border-bottom: 0px solid white;
 }
 
