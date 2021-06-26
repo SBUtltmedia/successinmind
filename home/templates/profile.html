@@ -4,7 +4,11 @@
 {% block body_block %}
 	<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 	<div id='outer'>
-		<h1>Athlete Profile</h1>
+		{% if coach %}
+			<h1>Coach Profile</h1>
+		{% else %}
+			<h1>Athlete Profile</h1>
+		{% endif %}
 		<br>
 		<div id='inner'>
 			<h3>{{ user.get_full_name }},</h3><br>
@@ -12,6 +16,49 @@
 			<p>&emsp;Email: {{ user.email }}</p>
 			<p>&emsp;Sport: {{ profile.sports }}</p>
 			<br>
+			<!-- Team Mental Fitness Table -->
+			<!-- Mental Fitness Table -->
+			<div>
+				<h4>Team Mental Fitness Assessments</h4>
+				<button type="submit" class="btn btn-primary">Create a Team</button>
+			</div>
+			{% if teams %}
+				<div class='table-responsive'>
+					<table class='table table-striped'>
+						<thead class='table-dark'>
+							<tr>
+								<th>#</th>
+								<th>Date</th>
+								<th>Number of Submissions</th>
+								<th>Confidence</th>
+								<th>Concentration</th>
+								<th>Composure</th>
+								<th>Challenge</th>
+								<th>Commitment</th>
+								<th>Overall Level</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for MFA in MFAs %}
+								<tr>
+									<th>{{ forloop.counter }}</th>
+									<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
+									<td><!-- Number of Submissions --></td>
+									<td>{{MFA.o_confidence}}/20</td>
+									<td>{{MFA.o_concentration}}/20</td>
+									<td>{{MFA.o_composure}}/20</td>
+									<td>{{MFA.o_challenge}}/20</td>
+									<td>{{MFA.o_commitment}}/20</td>
+									<td>{{MFA.total}}/100</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			{% else %}
+				<td>Nothing here yet! Create a Team</td>
+				<br>
+			{% endif %}
 			<!-- Mental Fitness Table -->
 			<h4>Mental Fitness Assessments</h4>
 			{% if MFAs %}

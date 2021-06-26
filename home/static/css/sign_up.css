@@ -41,7 +41,18 @@ h1 {
 	text-align: center;
 }
 
-button {
-	margin-left: 46.8%;
-	/* margin-right: 50%; */
+
+#coach {
+	display: flex;
+	justify-content: center;
+}
+
+#coach input {
+	margin-right: 2%;
+}
+
+
+#button {
+	display: flex;
+	justify-content: center;
 }
