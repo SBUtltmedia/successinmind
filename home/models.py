@@ -9,6 +9,7 @@ class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	sports = models.CharField(max_length=256)
 	gender = models.CharField(max_length=64)
+	coach = models.BooleanField(default=False)
 
 
 class MentalFitnessAssessment(models.Model):

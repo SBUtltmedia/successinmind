@@ -73,3 +73,43 @@ nav li a {
 		border-top: 1px solid darkgray;
 	}
 }
+
+
+.btn-primary {
+	background-color: #990000;
+    border-color: #990000;
+}
+
+.btn-primary:hover {
+	background-color: red;
+    border-color: red;
+}
+
+.btn-primary:active {
+	background-color: red;
+    border-color: red;
+	box-shadow: 0px 0px 0px 4px rgb(185, 185, 185) !important;
+}
+
+.btn-primary:focus {
+    background-color: red;
+    border-color: red;
+	box-shadow: 0px 0px 0px 4px rgb(185, 185, 185) !important;
+}
+
+.form-check-input:checked {
+    background-color: #990000;
+    border-color: #990000;
+}
+
+.form-check-input:focus {
+	box-shadow: 0px 0px 0px 4px rgb(185, 185, 185) !important;
+}
+
+.form-control:focus {
+	box-shadow: 0px 0px 0px 4px rgb(185, 185, 185) !important;
+}
+
+.dropdown-item:active {
+	background-color: #990000;
+}

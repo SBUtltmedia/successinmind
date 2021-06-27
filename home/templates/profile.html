@@ -17,46 +17,49 @@
 			<p>&emsp;Sport: {{ profile.sports }}</p>
 			<br>
 			<!-- Team Mental Fitness Table -->
-			<!-- Mental Fitness Table -->
-			<div>
-				<h4>Team Mental Fitness Assessments</h4>
-				<button type="submit" class="btn btn-primary">Create a Team</button>
-			</div>
-			{% if teams %}
-				<div class='table-responsive'>
-					<table class='table table-striped'>
-						<thead class='table-dark'>
-							<tr>
-								<th>#</th>
-								<th>Date</th>
-								<th>Number of Submissions</th>
-								<th>Confidence</th>
-								<th>Concentration</th>
-								<th>Composure</th>
-								<th>Challenge</th>
-								<th>Commitment</th>
-								<th>Overall Level</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for MFA in MFAs %}
-								<tr>
-									<th>{{ forloop.counter }}</th>
-									<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
-									<td><!-- Number of Submissions --></td>
-									<td>{{MFA.o_confidence}}/20</td>
-									<td>{{MFA.o_concentration}}/20</td>
-									<td>{{MFA.o_composure}}/20</td>
-									<td>{{MFA.o_challenge}}/20</td>
-									<td>{{MFA.o_commitment}}/20</td>
-									<td>{{MFA.total}}/100</td>
-								</tr>
-							{% endfor %}
-						</tbody>
-					</table>
+			{% if coach %}
+				<div id='team_header' class='row'>
+					<h4 class='col-md-8'>Team Mental Fitness Assessments</h4>
+					<div class='col-md-4'>
+						<button id='create_team' type="submit" class="btn btn-primary">Create a Team</button>
+					</div>
 				</div>
-			{% else %}
-				<td>Nothing here yet! Create a Team</td>
+				{% if teams %}
+					<div class='table-responsive'>
+						<table class='table table-striped'>
+							<thead class='table-dark'>
+								<tr>
+									<th>#</th>
+									<th>Date</th>
+									<th>Number of Submissions</th>
+									<th>Confidence</th>
+									<th>Concentration</th>
+									<th>Composure</th>
+									<th>Challenge</th>
+									<th>Commitment</th>
+									<th>Overall Level</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for MFA in MFAs %}
+									<tr>
+										<th>{{ forloop.counter }}</th>
+										<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
+										<td><!-- Number of Submissions --></td>
+										<td>{{MFA.o_confidence}}/20</td>
+										<td>{{MFA.o_concentration}}/20</td>
+										<td>{{MFA.o_composure}}/20</td>
+										<td>{{MFA.o_challenge}}/20</td>
+										<td>{{MFA.o_commitment}}/20</td>
+										<td>{{MFA.total}}/100</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				{% else %}
+					<td><p>Nothing here yet! Create a Team</p></td>
+				{% endif %}
 				<br>
 			{% endif %}
 			<!-- Mental Fitness Table -->
@@ -106,6 +109,33 @@
 				<br>
 			{% endif %}
 			<!-- End Mental Fitness Table -->
-		</div>
+			</div>
 	</div>
+
+	{% if coach %}
+		<div id='team_creator' style="visibility: hidden;">
+			<svg id='close_team' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+				<path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+			</svg>
+			<form method='post'>
+				{% csrf_token %}
+				<h1>Create a Team</h1>
+				<label for="password">Name the Team</label>
+				<input name='team_name' type="text" class="form-control" id="team_name" placeholder="Name">
+				<br>
+				<div id='refresh_button' class="btn btn-primary">
+					<svg id='refresh' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+						<path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+						<path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+					</svg>
+				</div>
+				<div id='team_token_div'>
+					<input name='team_token' type="text" class="form-control" id="team_token" value="XXXXXX" readonly>
+				</div>
+				<button type="submit" class="btn btn-primary">Create</button>
+			</form>
+		</div>
+		<script src="{% static 'js/profile_coach.js' %}"></script>
+	{% endif %}
+
 {% endblock %}

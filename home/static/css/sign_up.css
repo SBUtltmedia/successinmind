@@ -16,20 +16,6 @@ h1 {
 	text-align: center;
 }
 
-.form-check-input:checked {
-    background-color: #990000;
-    border-color: #990000;
-}
-
-.btn-primary {
-	background-color: #990000;
-    border-color: #990000;
-}
-
-.btn-primary:hover {
-	background-color: red;
-    border-color: red;
-}
 
 
 #sport_select * {

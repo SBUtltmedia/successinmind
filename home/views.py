@@ -64,6 +64,7 @@ class SignUpView(TemplateView):
 			profile = models.Profile(user=user)
 			profile.sports = request_values['sports']
 			profile.gender = request_values['gender']
+			profile.coach = True if request_values['coach'] == 'on' else False
 
 			profile.save()
 
@@ -249,8 +250,10 @@ class ProfileView(TemplateView):
 		user = self.request.user
 		context['MFAs'] = models.MentalFitnessAssessment.objects.filter(user=user)
 		context['profile'] = user.profile
+		context['coach'] = user.profile.coach
 		context['journals'] = models.Journal.objects.filter(user=user)
 		context['weekly_plans'] = models.WeeklyPlan.objects.filter(user=user)
+		print(context)
 		return context
 
 
