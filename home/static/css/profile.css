@@ -62,7 +62,6 @@
 #team_token_div {
 	width: 40%;
 	margin: 0 auto;
-	margin-bottom: 6%;
 }
 
 
@@ -78,9 +77,27 @@
 }
 
 
+
+#copy_div {
+	position: absolute;
+	margin-left: 1%;
+}
+
+
+#status_message {
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+#submit {
+	margin-top: 1%;
+}
+
+
 @media only screen and (max-width: 768px) {
 	#team_creator {
 		padding: 3%;
+		width: 80%;
 	}
 	
 	#close_team {
@@ -94,19 +111,4 @@
 	#team_token_div {
 		width: 100%;
 	}
-}
-
-#refresh_button {
-	background-color: #990000;
-    border-color: #990000;
-}
-
-#refresh_button:hover {
-	background-color: red;
-    border-color: red;
-}
-
-#refresh_button:focus {
-    background-color: red;
-    border-color: red;
 }

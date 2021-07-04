@@ -12,8 +12,14 @@ class Profile(models.Model):
 	coach = models.BooleanField(default=False)
 
 
+class Team_MentalFitnessAssessment(models.Model):
+	coach = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	code = models.TextField(max_length=6, unique=True)
+	name = models.TextField(max_length=128)
+
 class MentalFitnessAssessment(models.Model):
 	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	team = models.ForeignKey('home.Team_MentalFitnessAssessment', on_delete=models.SET_NULL, null=True)
 	date = models.DateTimeField(auto_now_add=True)
 	o_confidence = models.PositiveSmallIntegerField(default=0, null=True, validators=[
 								validators.MinLengthValidator(0),

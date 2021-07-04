@@ -32,3 +32,9 @@ class WeeklyPlanSerializer(serializers.ModelSerializer):
 		'course_work_goals', 'recreational_goals', 'goal_for_overall_performance_rating',
 		'goal_for_level_of_satisfaction')
 
+
+
+class TeamMentalFitnessAssessment(serializers.ModelSerializer):
+	class Meta:
+		model = models.Team_MentalFitnessAssessment
+		fields = ('coach', 'name', 'code')

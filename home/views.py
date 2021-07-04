@@ -64,7 +64,7 @@ class SignUpView(TemplateView):
 			profile = models.Profile(user=user)
 			profile.sports = request_values['sports']
 			profile.gender = request_values['gender']
-			profile.coach = True if request_values['coach'] == 'on' else False
+			profile.coach = True if request_values.get('coach', None) == 'on' else False
 
 			profile.save()
 
@@ -241,6 +241,148 @@ class MFAView(TemplateView):
 
 
 
+class MFA_Team_Selection_View(TemplateView):
+	template_name = 'MFA_team_select.html'
+
+	def post(self, request, *args, **kwargs):
+		if request.POST.get('team_token', None):
+			context = {
+				'team_code': request.POST.get('team_token')
+			}
+			return render(request, 'MFA.html', context)
+
+		request_values = request.POST.copy()
+		for c in request_values.values():
+			if not c:
+				return
+		mfa = models.MentalFitnessAssessment(user=request.user)
+		team_code = request.POST.get('team_code')
+		mfa.team = models.Team_MentalFitnessAssessment.objects.get(code=team_code) 
+		mfa.save()
+
+		try:
+			results = {
+				'Confidence': self.gather_confidence(request_values, mfa),
+				'Concentration': self.gather_composure(request_values, mfa),
+				'Composure': self.gather_challenge(request_values, mfa),
+				'Challenge': self.gather_concentration(request_values, mfa),
+				'Commitment': self.gather_commitment(request_values, mfa),
+			}
+		except:
+			# Handled in time with JS, but just in case
+			return render(request, self.template_name, context={'error': "Be sure to fill out every value!"})
+		results_data = list(results.values())
+		results_sum = sum(results_data)
+		
+		mfa.total = results_sum
+		mfa.save()
+		context = {
+			'results': results.items(),
+			'result_data': list(results.values()),
+			'result_sum': results_sum,
+			'result_percent': results_sum,
+			'team_code': request.POST.get('team_code')
+		}
+		return render(request, 'MFA.html', context=context)
+
+	def gather_confidence(self, request_values, mfa):
+		c = models.Confidence(mfa_id=mfa)
+		c.confidence_1 = request_values['confidence_1']
+		c.confidence_2 = request_values['confidence_2']
+		c.confidence_3 = request_values['confidence_3']
+		c.confidence_4 = request_values['confidence_4']
+		c.confidence_5 = request_values['confidence_5']
+		c.p_confidence = request_values['p_confidence']
+		c.save()
+		
+		o_confidence = 0
+		for i in range(1, 6):
+			o_confidence += int(request_values[f'confidence_{i}'])
+		o_confidence += int(request_values['p_confidence'])
+		mfa.o_confidence = o_confidence
+		mfa.save()
+
+		return o_confidence
+
+	def gather_composure(self, request_values, mfa):
+		c = models.Composure(mfa_id=mfa)
+		c.composure_1 = request_values['composure_1']
+		c.composure_2 = request_values['composure_2']
+		c.composure_3 = request_values['composure_3']
+		c.composure_4 = request_values['composure_4']
+		c.composure_5 = request_values['composure_5']
+		c.p_composure = request_values['p_composure']
+		c.save()
+
+		o_composure = 0
+		for i in range(1, 6):
+			o_composure += int(request_values[f'composure_{i}'])
+		o_composure += int(request_values['p_composure'])
+		mfa.o_composure = o_composure
+		mfa.save()
+
+		return o_composure
+
+	def gather_challenge(self, request_values, mfa):
+		c = models.Challenge(mfa_id=mfa)
+		c.challenge_1 = request_values['challenge_1']
+		c.challenge_2 = request_values['challenge_2']
+		c.challenge_3 = request_values['challenge_3']
+		c.challenge_4 = request_values['challenge_4']
+		c.challenge_5 = request_values['challenge_5']
+		c.p_challenge = request_values['p_challenge']
+		c.save()
+
+		o_challenge = 0
+		for i in range(1, 6):
+			o_challenge += int(request_values[f'challenge_{i}'])
+		o_challenge += int(request_values['p_challenge'])
+		mfa.o_challenge = o_challenge
+		mfa.save()
+
+		return o_challenge
+
+	def gather_concentration(self, request_values, mfa):
+		c = models.Concentration(mfa_id=mfa)
+		o_concentration = 0
+		c.concentration_1 = request_values['concentration_1']
+		c.concentration_2 = request_values['concentration_2']
+		c.concentration_3 = request_values['concentration_3']
+		c.concentration_4 = request_values['concentration_4']
+		c.concentration_5 = request_values['concentration_5']
+		c.p_concentration = request_values['p_concentration']
+		c.save()
+
+		o_concentration = 0
+		for i in range(1, 6):
+			o_concentration += int(request_values[f'concentration_{i}'])
+		o_concentration += int(request_values['p_concentration'])
+		mfa.o_concentration = o_concentration
+		mfa.save()
+
+		return o_concentration
+
+	def gather_commitment(self, request_values, mfa):
+		c = models.Commitment(mfa_id=mfa)
+		c.commitment_1 = request_values['commitment_1']
+		c.commitment_2 = request_values['commitment_2']
+		c.commitment_3 = request_values['commitment_3']
+		c.commitment_4 = request_values['commitment_4']
+		c.commitment_5 = request_values['commitment_5']
+		c.p_commitment = request_values['p_commitment']
+		c.save()
+
+		o_commitment = 0
+		for i in range(1, 6):
+			o_commitment += int(request_values[f'commitment_{i}'])
+		o_commitment += int(request_values['p_commitment'])
+		mfa.o_commitment = o_commitment
+		mfa.save()
+
+		return o_commitment
+
+
+
 @method_decorator(login_required, name='dispatch')
 class ProfileView(TemplateView):
 	template_name = 'profile.html'
@@ -253,8 +395,51 @@ class ProfileView(TemplateView):
 		context['coach'] = user.profile.coach
 		context['journals'] = models.Journal.objects.filter(user=user)
 		context['weekly_plans'] = models.WeeklyPlan.objects.filter(user=user)
-		print(context)
+		context['teams'] = self.get_team_context(user)
 		return context
+
+	def post(self, request, *args, **kwargs):
+		team = models.Team_MentalFitnessAssessment(coach=request.user)
+		request_values = request.POST.copy()
+		team.name = request_values['team_name']
+		team.code = request_values['team_token']
+		team.save()
+
+		return render(request, self.template_name, context=self.get_context_data())
+
+	def get_team_context(self, user):
+		teams = models.Team_MentalFitnessAssessment.objects.filter(coach=user)
+		teams_data = []
+		for team in teams:
+			team_data = {
+				'name': team.name,
+				'code': team.code,
+				'submissions': 0,
+				'a_confidence': 0,
+				'a_concentration': 0,
+				'a_composure': 0,
+				'a_challenge': 0,
+				'a_commitment': 0,
+				'a_total': 0,
+			}
+			mfas = models.MentalFitnessAssessment.objects.filter(team=team)
+			team_data['submissions'] = len(mfas)
+			if len(mfas) > 0:
+				for mfa in mfas:
+					team_data['a_confidence'] += mfa.o_confidence
+					team_data['a_concentration'] += mfa.o_concentration
+					team_data['a_composure'] += mfa.o_composure
+					team_data['a_challenge'] += mfa.o_challenge
+					team_data['a_commitment'] += mfa.o_commitment
+					team_data['a_total'] += mfa.total
+				team_data['a_confidence'] /= len(mfas)
+				team_data['a_concentration'] /= len(mfas)
+				team_data['a_composure'] /= len(mfas)
+				team_data['a_challenge'] /= len(mfas)
+				team_data['a_commitment'] /= len(mfas)
+				team_data['a_total'] /= len(mfas)
+			teams_data.append(team_data)
+		return teams_data
 
 
 @method_decorator(login_required, name='dispatch')

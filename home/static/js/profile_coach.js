@@ -51,3 +51,43 @@ $('#close_team').click(function() {
 	enableScroll()
 	$('#team_creator').css('visibility','hidden')
 })
+
+var url = window.location.origin + "/api/mfa_team/"
+
+function getCode() {
+	$.get(url, function(data) {$('#team_token').val(data.code)})
+}
+
+getCode()
+
+$('#refresh_button').click(getCode)
+
+
+$('#copy').hover(function () {
+		$(this).css('color', 'red')
+	}, function () {
+		$(this).css('color', 'black')
+	}
+)
+
+$('#copy').click(function () {
+	var copyText = document.getElementById('team_token')
+	copyText.select();
+	copyText.setSelectionRange(0, 99999)
+	document.execCommand("copy");
+
+	var status_message = document.getElementById('status_message')
+	status_message.innerHTML = 'Code copied to clipboard'
+	status_message.style.color = "green";
+})
+
+
+$('#submit').click( function () {
+	if (document.getElementById('team_name').value != '') {
+		document.getElementById("team_form").submit();
+	} else {
+		var status_message = document.getElementById('status_message')
+		status_message.innerHTML = 'Please give the Team a name'
+		status_message.style.color = "red";
+	}
+})

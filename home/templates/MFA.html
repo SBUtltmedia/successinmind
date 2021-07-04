@@ -12,6 +12,12 @@
 				<h5>John J. Bowman, Ph.D.</h5>
 				<h5>2021</h5>
 			</div>
+			{% if team_code %}
+				<h4 id='team_name'></h4>
+				<script>
+					var team_code = '{{team_code}}'
+				</script>
+			{% endif %}
 			<br>
 			<h6>PHYSICAL FITNESS Is measured by evaluating strength, speed, flexibility, agility, and endurance. All of
 				which contribute your overall physical fitness level.</h6><br>
@@ -25,6 +31,9 @@
 			<h6 id='rating' class='intro'>0 = Never&emsp;&emsp;1 = Sometimes&emsp;&emsp;2 = Almost Always</h6>
 			<form method='post'>
 				{% csrf_token %}
+				{% if team_code %}
+					<input type="text" name='team_code' value="{{team_code}}" style="display: none;">
+				{% endif %}
 				<br>
 				<div id='mfa_form' class='form'>
 					<!-- Confidence -->
@@ -565,7 +574,7 @@
 						</div>
 						<br>
 						<div id='perception' class='form-block'>
-							<div class='form-question row align-items-center'>
+							<div class='perception_row form-question row align-items-center'>
 								<div class='form-prompt col-md-8'>
 									<label for="p_confidence"><h4>Confidence</h4></label>
 								</div>
@@ -586,7 +595,7 @@
 									</select>
 								</div>
 							</div>
-							<div class='form-question row align-items-center'>
+							<div class='perception_row form-question row align-items-center'>
 								<div class='form-prompt col-md-8'>
 									<label for="p_concentration"><h4>Concentration</h4></label>
 								</div>
@@ -607,7 +616,7 @@
 									</select>
 								</div>
 							</div>
-							<div class='form-question row align-items-center'>
+							<div class='perception_row form-question row align-items-center'>
 								<div class='form-prompt col-md-8'>
 									<label for="p_composure"><h4>Composure</h4></label>
 								</div>
@@ -628,7 +637,7 @@
 									</select>
 								</div>
 							</div>
-							<div class='form-question row align-items-center'>
+							<div class='perception_row form-question row align-items-center'>
 								<div class='form-prompt col-md-8'>
 									<label for="p_challenge"><h4>Challenge Response</h4></label>
 								</div>
@@ -649,7 +658,7 @@
 									</select>
 								</div>
 							</div>
-							<div class='form-question row align-items-center'>
+							<div class='perception_row form-question row align-items-center'>
 								<div class='form-prompt col-md-8'>
 									<label for="p_commitment"><h4>Commitment</h4></label>
 								</div>
@@ -686,7 +695,7 @@
 						<div class="dot"></div>
 						<div class="dot"></div>
 						<div class="dot"></div>
-						<div class="dot"></div>
+						<div id='final_dot' class="dot"></div>
 					</div>
 					<input id='submit' type="submit" class='col-md-2 order-md-2 col-6 order-2 arrow btn btn-primary' value="Submit"></input>
 					<svg id='forward' class="col-md-2 order-md-2 col-6 order-2 arrow bi bi-arrow-right-square" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -745,5 +754,8 @@
 	</div>
 	{% if not results %}
 		<div id='bottom_space' class='container'></div>
+	{% endif %}
+	{% if team_code %}
+		<script src="{% static 'js/mfa_team.js' %}"></script>
 	{% endif %}
 {% endblock %}

@@ -8,4 +8,5 @@ urlpatterns = [
 	path('mfa/', views.MFAApiView.as_view(), name='mfa_api'),
 	path('journal/', views.JournalApiView.as_view(), name='journal_api'),
 	path('weekly_plan/', views.WeeklyPlanApiView.as_view(), name='weekly_plan_api'),
+	path('mfa_team/', views.TeamMFAApiView.as_view(), name='team_mfa_api'),
 ]

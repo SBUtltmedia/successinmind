@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+	<link rel="stylesheet" href="{% static 'css/MFA_team_select.css'%}">
+	<!-- Log In Block -->
+	<div id='enclosure'>
+		<h1>Team Mental Fitness Assessment</h1>
+		<h4>Take your Mental Fitness Assessment as a Team</h4>
+		<br>
+		<form id='team_form' method='post'>
+			{% csrf_token %}
+			<label for="team_token">Enter The Team Code</label>
+			<div id='team_token_div'>
+				<input name='team_token' type="text" style="text-transform:uppercase"
+					class="form-control" id="team_token" value="" maxlength="6" required>
+				<h4 id='team_name'></h4>
+			</div>
+			<p id='status_message'></p>
+			<div id='submit' class="btn btn-primary">Take Assessment</div>
+			<script src="{% static 'js/team_select.js' %}"></script>
+		</form>
+	</div>
+{% endblock %}

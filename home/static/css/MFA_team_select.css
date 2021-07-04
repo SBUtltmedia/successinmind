@@ -1,0 +1,39 @@
+
+#enclosure {
+	margin: 5%;
+	border: 2px solid #990000;
+	border-radius: 15px;
+	padding: 3%;
+	text-align: center;
+}
+
+#team_token_div {
+	width: 60%;
+	margin: 0 auto;
+	margin-bottom: 1%;
+}
+
+
+#team_token {
+	text-align: center;
+	font-size: 165%;
+}
+
+#team_name {
+	margin-top: .5%;
+}
+
+#status_message {
+	color: red;
+}
+
+#submit {
+	margin-top: 2%;
+}
+
+@media only screen and (max-width: 768px) {
+
+	#team_token_div {
+		width: 100%;
+	}
+}

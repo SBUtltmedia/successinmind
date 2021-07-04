@@ -6,6 +6,10 @@ from rest_framework import permissions
 from home.api import serializers
 from home import models
 
+# For Teams
+import random
+import string
+
 
 class ApiMainView(APIView):
 
@@ -22,6 +26,11 @@ class ApiMainView(APIView):
 				'POST - Creates new Weekly Plan record. Requires \'date\', \'text\'',
 				'DELETE - Deletes Weekly Plan record of user. Requires \'date\'',
 			],
+			'/api/mfa_team': [
+				'GET - Returns a generated team code. If code is specified, returns \
+				name of team with associated code.',
+				'POST - Creates team with inputted code and name referenced to user.'
+			]
 			})
 
 
@@ -166,3 +175,40 @@ class WeeklyPlanApiView(APIView):
 			return Response(status=status.HTTP_200_OK)
 		else:
 			return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+class TeamMFAApiView(APIView):
+	permission_classes = [permissions.IsAuthenticated]
+
+	def get(self, request, *args, **kwargs):
+		code = request.data.get('code', None)
+		if not code:
+			code = request.GET.get('code', None)
+		data = {}
+		if code:
+			team = models.Team_MentalFitnessAssessment.objects.get(code=code)
+			if team:
+				data['name'] = team.name
+			else:
+				data['name'] = "Team not found"
+		else:
+			match = True
+			while match:
+				chars = string.ascii_uppercase + string.digits
+				code = ''.join(random.choice(chars) for i in range(6))
+				match = models.Team_MentalFitnessAssessment.objects.filter(code=code)
+			data['code'] = code
+		return Response(data, status=status.HTTP_200_OK)
+
+	def post(self, request, *args, **kwargs):
+		data = {
+			'user': request.user.id,
+			'code': request.data.get('code'),
+			'name': request.data.get('name'),
+		}
+		serializer = serializers.TeamMentalFitnessAssessment(data=data)
+		if serializer.is_valid():
+			serializer.save()
+			return Response(serializer.data, status=status.HTTP_201_CREATED)
+		else:
+			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
