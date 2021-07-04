@@ -14,8 +14,8 @@ class Profile(models.Model):
 
 class Team_MentalFitnessAssessment(models.Model):
 	coach = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-	team_code = models.TextField(unique=True)
-	name = models.TextField(max_length=128)
+	team_code = models.CharField(unique=True, max_length=6)
+	name = models.CharField(max_length=128)
 
 class MentalFitnessAssessment(models.Model):
 	user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
