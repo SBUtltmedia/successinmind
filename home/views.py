@@ -257,7 +257,7 @@ class MFA_Team_Selection_View(TemplateView):
 				return
 		mfa = models.MentalFitnessAssessment(user=request.user)
 		team_code = request.POST.get('team_code')
-		mfa.team = models.Team_MentalFitnessAssessment.objects.get(code=team_code) 
+		mfa.team = models.Team_MentalFitnessAssessment.objects.get(team_code=team_code) 
 		mfa.save()
 
 		try:
@@ -402,7 +402,7 @@ class ProfileView(TemplateView):
 		team = models.Team_MentalFitnessAssessment(coach=request.user)
 		request_values = request.POST.copy()
 		team.name = request_values['team_name']
-		team.code = request_values['team_token']
+		team.team_code = request_values['team_token']
 		team.save()
 
 		return render(request, self.template_name, context=self.get_context_data())
@@ -413,7 +413,7 @@ class ProfileView(TemplateView):
 		for team in teams:
 			team_data = {
 				'name': team.name,
-				'code': team.code,
+				'code': team.team_code,
 				'submissions': 0,
 				'a_confidence': 0,
 				'a_concentration': 0,

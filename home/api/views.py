@@ -186,7 +186,7 @@ class TeamMFAApiView(APIView):
 			code = request.GET.get('code', None)
 		data = {}
 		if code:
-			team = models.Team_MentalFitnessAssessment.objects.get(code=code)
+			team = models.Team_MentalFitnessAssessment.objects.get(team_code=code)
 			if team:
 				data['name'] = team.name
 			else:
@@ -196,7 +196,7 @@ class TeamMFAApiView(APIView):
 			while match:
 				chars = string.ascii_uppercase + string.digits
 				code = ''.join(random.choice(chars) for i in range(6))
-				match = models.Team_MentalFitnessAssessment.objects.filter(code=code)
+				match = models.Team_MentalFitnessAssessment.objects.filter(team_code=code)
 			data['code'] = code
 		return Response(data, status=status.HTTP_200_OK)
 
