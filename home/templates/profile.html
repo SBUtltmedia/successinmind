@@ -65,7 +65,11 @@
 				<br>
 			{% endif %}
 			<!-- Mental Fitness Table -->
-			<h4>Individual Mental Fitness Assessments</h4>
+			{% if coach %}
+				<h4>Individual Mental Fitness Assessments</h4>
+			{% elseif %}
+				<h4>Mental Fitness Assessments</h4>
+			{% endif %}
 			{% if MFAs %}
 				<div class='table-responsive'>
 					<table class='table table-striped'>
