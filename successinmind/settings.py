@@ -97,10 +97,10 @@ else:
         'default': {
             ## Prod MySQL
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'jjbsuccess$successinmind',
-            'USER': 'jjbsuccess',
+            'NAME': 'mysql_81236_mpmsuccess',
+            'USER': 'bowmansuccess',
             'PASSWORD': 'jjb1841764530',
-            'HOST': 'jjbsuccess.mysql.pythonanywhere-services.com',
+            'HOST': 'my04.winhost.com',
         }
     }
 
