@@ -390,7 +390,7 @@ class ProfileView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		user = self.request.user
-		context['MFAs'] = models.MentalFitnessAssessment.objects.filter(user=user)
+		context['MFAs'] = self.percentize(models.MentalFitnessAssessment.objects.filter(user=user))
 		context['profile'] = user.profile
 		context['coach'] = user.profile.coach
 		context['journals'] = models.Journal.objects.filter(user=user)
@@ -406,6 +406,22 @@ class ProfileView(TemplateView):
 		team.save()
 
 		return render(request, self.template_name, context=self.get_context_data())
+
+
+	def percentize(self, mfas):
+		_mfas = []
+		for mfa in mfas:
+			_dict = {}
+			_dict['date'] = mfa.date
+			_dict['o_confidence'] = (mfa.o_confidence / 20) * 100
+			_dict['o_concentration'] = (mfa.o_concentration / 20) * 100
+			_dict['o_composure'] = (mfa.o_composure / 20) * 100
+			_dict['o_challenge'] = (mfa.o_challenge / 20) * 100
+			_dict['o_commitment'] = (mfa.o_commitment / 20) * 100
+			_dict['total'] = mfa.total
+			_dict['pk'] = mfa.pk
+			_mfas.append(_dict)
+		return _mfas
 
 	def get_team_context(self, user):
 		teams = models.Team_MentalFitnessAssessment.objects.filter(coach=user)
@@ -438,6 +454,12 @@ class ProfileView(TemplateView):
 				team_data['a_challenge'] /= len(mfas)
 				team_data['a_commitment'] /= len(mfas)
 				team_data['a_total'] /= len(mfas)
+
+				team_data['a_confidence'] = (team_data['a_confidence'] / 20) * 100
+				team_data['a_concentration'] =(team_data['a_concentration'] / 20) * 100
+				team_data['a_composure'] = (team_data['a_composure'] / 20) * 100
+				team_data['a_challenge'] = (team_data['a_challenge'] / 20) * 100
+				team_data['a_commitment'] = (team_data['a_commitment'] / 20) * 100
 			teams_data.append(team_data)
 		return teams_data
 
