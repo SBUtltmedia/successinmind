@@ -53,7 +53,7 @@
 										<td>{{team.a_composure|floatformat:2}}/20</td>
 										<td>{{team.a_challenge|floatformat:2}}/20</td>
 										<td>{{team.a_commitment|floatformat:2}}/20</td>
-										<td>{{team.a_total|floatformat:2}}/100</td>
+										<td>{{team.a_total|floatformat:2}}%</td>
 									</tr>
 								{% endfor %}
 							</tbody>
@@ -96,7 +96,7 @@
 									<td>{{MFA.o_composure}}/20</td>
 									<td>{{MFA.o_challenge}}/20</td>
 									<td>{{MFA.o_commitment}}/20</td>
-									<td>{{MFA.total}}/100</td>
+									<td>{{MFA.total}}%</td>
 									<td>
 										<a href="{% url 'home:export_mfa' pk=MFA.pk %}" target="_blank">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
