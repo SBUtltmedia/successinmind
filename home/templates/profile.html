@@ -91,12 +91,12 @@
 								<tr>
 									<th>{{ forloop.counter }}</th>
 									<td>{{MFA.date|date:'n/j/Y'}} - {{MFA.date|time:'g:i a'}}</td>
-									<td>{{MFA.o_confidence}}%</td>
-									<td>{{MFA.o_concentration}}%</td>
-									<td>{{MFA.o_composure}}%</td>
-									<td>{{MFA.o_challenge}}%</td>
-									<td>{{MFA.o_commitment}}%</td>
-									<td>{{MFA.total}}%</td>
+									<td>{{MFA.o_confidence|floatformat:2}}%</td>
+									<td>{{MFA.o_concentration|floatformat:2}}%</td>
+									<td>{{MFA.o_composure|floatformat:2}}%</td>
+									<td>{{MFA.o_challenge|floatformat:2}}%</td>
+									<td>{{MFA.o_commitment|floatformat:2}}%</td>
+									<td>{{MFA.total|floatformat:2}}%</td>
 									<td>
 										<a href="{% url 'home:export_mfa' pk=MFA.pk %}" target="_blank">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
