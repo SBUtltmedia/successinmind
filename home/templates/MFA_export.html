@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		.container {
+			padding-right: 10%;
+			padding-left: 10%;
+		}
+
+
+		.container :not(h1, h2) {
+			font-size: 105%;
+		}
+
+
+		.col-lg-10 {
+			width: 80%;
+		}
+
+
+		#mfa_container {
+			margin-top: 15px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#mfa_container h1{
+			text-align: center;
+		}
+		#mfa_container h2{
+			text-align: center;
+		}
+
+
+		#mfa_container table {
+			margin-left: auto;
+			margin-right: auto;
+			font-weight: bold;
+		}
+
+		#mfa_container tr {
+			display: inline-flex;
+		}	
+
+		#mfa_container td {
+			padding-left: 10px;
+			padding-right: 10px;
+		}	
+
+		.c_block {
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+
+		.c_header h5 {
+			padding-top: 15px;
+			font-size: 115%;
+			font-weight: bold;
+			padding-bottom: 2px;
+			border-bottom: 2px solid #990000;
+		}
+
+		.c_header p {
+			margin-left: 2%;
+		}
+
+		.c_header table {
+			font-weight: bold;
+		}
+
+		.c_question {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.c_question p {
+			padding-right: 8em;
+		}
+
+		.c_question * {
+			display: inline-block;
+		}
+
+		.c_option {
+			margin-right: 6px;
+			margin-left: 6px;
+			text-align: center;
+		}
+
+		#bottom_space {
+			margin: 20px;
+			border: 20px;
+			padding: 20px;
+		}
+
+		#perception .c_question {
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+
+		#perception .col-lg-10 {
+			width: 60%;
+		}
+
+		#results h3 {
+			text-align: center;
+			padding-top: 15px;
+			font-size: 150%;
+			font-weight: bold;
+			padding-bottom: 2px;
+			border-bottom: 2px solid #990000;
+		}
+
+
+		#results .c_question {
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+
+		#results .col-lg-10 {
+			width: 60%;
+		}
+
+		#results #total {
+			border-bottom: 1px solid white;
+		}
+
+		#total_block {
+			text-align: center;
+			
+		}
+
+		.container #author {
+			margin-left: 60%;
+			text-align: center;
+		}
+
+	</style>
+	<title>Mental Fitness Assessment</title>
+</head>
+
+<body>
+	<!-- Fitness Assessment -->
+	<div id='mfa_container' class="container">
+		<!-- Intro -->
+		<h1>Mental Fitness Assessment</h1>
+		<h2>{{mfa.date|date:'n/j/Y'}} - {{mfa.date|time:'g:i a'}}</h2>
+		<h2>Dr. B's 5 C's</h2>
+		<div id='author'>
+			<h5>John J. Bowman, Ph.D.</h5>
+			<h5>2021</h5>
+		</div>
+		<br>
+		<h4>PHYSICAL FITNESS Is measured by evaluating strength, speed, flexibility, agility, and endurance. All of
+			which contribute your overall physical fitness level.</h4><br>
+		<h4>MENTAL FITNESS can also be measured by evaluating the psychological attributes of confidence, concentration,
+			composure, challenge response, and commitment. All of which contribute to your overall level of Mental
+			Toughness and Resiliency.</h4>
+		<br>
+		<form action="">
+			<h6>Rate each of the statements below to assess your MENTAL FITNESS</h6>
+			<table>
+				<tr>
+					<td>0 = Never</td>
+					<td>1 = Sometimes</td>
+					<td>2 = Almost Always</td>
+				</tr>
+			</table>
+			<br>
+			<!-- Confidence  -->
+			<div class='c_block'>
+				<div class='c_header'>
+					<h5>CONFIDENCE</h5>
+					<p>A strong belief or expectancy that you Will succeed at the specific task or challenge you are
+						facing. Confidence is made up of three experiential components:</p>
+					<table>
+						<tr>
+							<td>Feeling Confident</td>
+							<td>Thinking Confidently</td>
+							<td>Behaving Confidently</td>
+						</tr>
+					</table><br>
+				</div><br>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I set specific goals for things I want to accomplish in both practice and in competition:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{confidence.confidence_1}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I notice things I do WELL in practice and competition that I store in the back of my mind to draw
+						from when I need to build my confidence:</p>
+					<div class='col-lg-2'>
+						<div class='col-lg-2'>
+							<div class="c_option">
+								<label class='form-check-label' for="confidence_1"><u>&nbsp;{{confidence.confidence_2}}&nbsp;</u></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I utilize a pre-event plan to adjust my focus, arousal level and emotional state to align it with
+						my ideal performance state:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{confidence.confidence_3}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I engage in positive self talk to build my confidence that the stay confident when things get
+						tough:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{confidence.confidence_4}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I utilize imagery to see myself thinking feeling and acting confidently in practice or
+						competition:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{confidence.confidence_5}}&nbsp;</u></label>
+						</div>
+					</div>
+			</div>
+			<!-- Concentration -->
+			<div class='c_block'>
+				<div class='c_header'>
+					<h5>CONCENTRATION</h5>
+					<p>The ability to maintain focus on the most important/relevant aspects of a performance. It entails
+						being able to maintain attention and focus overtime and to stay in the present orientation (not
+						thinking about past or future issues)</p>
+				</div><br>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I am aware of the noticing part of my mind and engage in mindfulness or meditation practices:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{concentration.concentration_1}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I purposely plan what I will say or think to myself prior to and during event to keep me focused
+						on the task at hand at critical points in the event:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{concentration.concentration_2}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>If I get distracted and my performance goes down I have a plan to refocus and get back on track:
+					</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{concentration.concentration_3}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I am able to concentrate under pressure and tune into the process of performing while tuning out
+						the importance of the outcome:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{concentration.concentration_4}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I can Mindfully be aware of distracting thoughts or feelings in a non-judgemental way while
+						keeping my focus on the task at hand:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{concentration.concentration_5}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Composure -->
+			<div class='c_block'>
+				<div class='c_header'>
+				<h5>COMPOSURE</h5>
+				<p>The ability to deal with strong emotions such as excitement, anger, anxiety and disappointment in the way the facilitates rather than interferes with your sports performance.</p>
+				</div><br>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I am able to stay calm, confident, and feel in control prior to and during important events:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{composure.composure_1}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I recognize that negative feelings are more about me and how I am assessing the situation than anything else:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{composure.composure_2}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I focus on those things are that are within my control and set specific goals for them while blocking out things that are outside of my control:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{composure.composure_3}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I recognize that between an Event and my Response there is a space. I’ve view that space as my opportunity to Choose my Response:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{composure.composure_4}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I stay Committed to Feeling, Thinking and Behaving in a way that leads to achieving an Important outcome no matter what:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{composure.composure_5}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Challenge -->
+			<div class='c_block'>
+				<div class='c_header'>
+				<h5>CHALLENGE RESPONSE</h5>
+				<p>The ability to handle the physical and psychological setbacks/mistakes that occur as part of the sport experience and come back stronger having learned from them and to interpret important events as a challenge to perform at your best not as a cause for fear or anxiety.</p>
+				</div><br>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I view mistakes or poor performances as opportunities to learn and to strengthen my determination to improve my performance:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{challenge.challenge_1}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I look at important games or competitions as opportunities for me two exel and to demonstrate to myself and to the world my ability to perform at my best under pressure:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{challenge.challenge_2}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I am able to find something useful or beneficial in difficult or challenging situations:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{challenge.challenge_3}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I interpret Pre-event anxious feelings as an alert signal that my body’s activation mechanism is switching on, getting me ready to compete and meet the challenge of the upcoming event:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{challenge.challenge_4}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I use the positive energy and arousal that comes with feeling challenged to direct my focus toward building my confidence and attending to the specific tasks I need to perform and not the outcome of the event:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{challenge.challenge_5}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Commitment -->
+			<div class='c_block'>
+				<div class='c_header'>
+					<h5>COMMITMENT</h5>
+					<p>The ability to handle the physical and psychological setbacks/mistakes that occur as part of the sport experience and come back stronger having learned from them and to interpret important events as a challenge to perform at your best not as a cause for fear or anxiety.</p>
+				</div><br>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I am unswerving in my belief that hard work, dedication and perseverance will result in attaining my ultimate Dream Goal:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{commitment.commitment_1}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I am willing to sacrifice whatever it takes in the present and maintain a long-term perspective in the journey to success:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{commitment.commitment_2}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I act in accordance with my core values and stay focused on what is most important to me:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{commitment.commitment_3}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I use positive self talk and affirmations to keep me motivated on a daily basis:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{commitment.commitment_4}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<p class='col-lg-10'>I feel a strong sense of Support and Encouragement toward my efforts to succeed from my teammates, family and friends:</p>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{commitment.commitment_5}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id='perception' class='c_block'>
+				<div class='c_header'>
+					<h5>OVERALL RATING</h5>
+					<p>Rate your perceived level of MENTAL FITNESS over the past week on each of Dr. B’S 5 C’s with ZERO being the lowest and TEN being the highest:</p>
+				</div><br>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Confidence:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{confidence.p_confidence}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Concentration:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{concentration.p_concentration}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Composure:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{composure.p_composure}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Challenge Response:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{challenge.p_challenge}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Commitment:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>&nbsp;{{commitment.p_commitment}}&nbsp;</u></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id='results' class='c_block'>
+				<div class='c_header'>
+					<h3>Results</h3>
+				</div><br>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Confidence:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>{{mfa.o_confidence}}/20</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Concentration:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>{{mfa.o_concentration}}/20</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Composure:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>{{mfa.o_composure}}/20</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Challenge Response:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>{{mfa.o_challenge}}/20</u></label>
+						</div>
+					</div>
+				</div>
+				<div class='c_question row'>
+					<h4 class='col-lg-10'>Commitment:</h4>
+					<div class='col-lg-2'>
+						<div class="c_option">
+							<label class='form-check-label' for="confidence_1"><u>{{mfa.o_commitment}}/20</u></label>
+						</div>
+					</div>
+				</div>
+				<h3 id='total'>Overall Mental Fitness Score:&emsp;&emsp;{{mfa.total}}/100&emsp;&emsp;{{mfa.total}}%</h3>
+				<div id='total_block'>
+					{% if result_percent > 75 %}
+						<h4 style='color: SpringGreen'>Outstanding Mental Fitness</h4>
+					{% elif result_percent > 60 %}
+						<h4 style='color: gold'>Could benefit from more consistent application of mental skills</h4>
+					{% else %}
+						<h4 style='color: red'>Could benefit from mental training</h4>
+					{% endif %}
+					<p style="text-align: center;">Your <u>Mental Fitness Assessment</u> provides a baseline to direct you to which of the Dr B's 5 C's to
+						strength in the <u>Mind Gym</u> to build you Mindset For Success.
+					</p>
+				</div>
+			</div>
+			<br>
+	</div>
+	<div id='bottom_space' class='container'></div>
+</body>
+</html>
